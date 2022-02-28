@@ -1,0 +1,16 @@
+form {
+    margin-top: 40px;
+    border-style: solid;
+    padding: 30px;
+    text-align: center;
+}
+
+form label {
+    display: inline-block;
+    text-align: right;
+    width: 85px;
+}
+
+form input {
+    margin-bottom: 20px;
+}
