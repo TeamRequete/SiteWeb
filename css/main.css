@@ -1,21 +1,33 @@
 body {
     margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: #5e42a6;
+    background-image: url("../images/intro.svg");
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center
+
     color: white;
 }
 
 header {
-    background-color: grey;
+    background-color: #312450;
+    padding: 0;
+    margin: 0;
+    width: 100%;
 }
 
 header headerBar {
+    height: 100%;
     display: flex;
+    flex-direction: row;
     min-height: 50px;
     align-items: center;
+    color:white;
 }
 
 header h2 {
@@ -28,15 +40,36 @@ header a {
     text-decoration: none;
 }
 
-header menu {
-    margin-left: 20px;
+header headerBar menu {
+  display: flex;
+  margin: 0;
+  height: 69px;
+  flex-direction:row;
+  margin-left: 20px;
+
 }
 
-header menu a {
+header menu div {
+    height: 100%;
     color: rgb(97, 11, 90);
-    text-decoration: none;
-    font-size: 20pt;
-    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header menu div a {
+  display: flex;
+  text-decoration: none;
+  font-size: 20pt;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+header menu div:hover{
+  background-color: #392a5d;
 }
 
 header research {
@@ -45,16 +78,25 @@ header research {
 
 header research input {
     height: 30px;
-    background-color: black;
-    color: white;
+    color: black;
+    background-color: white;
+    background-image: url('../images/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+    border: 1px solid;
+    border-color: black;
 }
 
 header research input::placeholder {
-    color: white;
+    color: black;
 }
 
 header research button {
     height: 25px;
+    border: 1px solid;
+    border-color: black;
+    height: 34px;
 }
 
 header connect {
@@ -66,4 +108,12 @@ header connect a {
     border-style: solid;
     padding: 7px;
     text-decoration: none;
+    color: rgb(162, 162, 162);
+}
+
+header connect a:hover {
+    border-style: solid;
+    padding: 7px;
+    text-decoration: none;
+    color: rgb(84, 64, 102);
 }
