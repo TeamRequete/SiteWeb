@@ -1,0 +1,33 @@
+listFormations {
+    display: flex;
+}
+
+listFormations card {
+    border-style: solid;
+    border-color: wheat;
+    padding: 15px;
+    max-width: 300px;
+    margin: 45px;
+}
+
+listFormations card a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: white;
+}
+
+listFormations card a img {
+    width: 300px;
+    height: 150px;
+    object-fit: cover;
+}
+
+listFormations card a cardTitle {
+    font-size: x-large;
+    word-wrap: break-word;
+    border-style: solid;
+    margin-top: 5px;
+    padding: 3px;
+    border-width: 1px;
+}

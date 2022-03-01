@@ -46,6 +46,7 @@ header research {
 header research input {
     height: 30px;
     background-color: black;
+    color: white;
 }
 
 header research input::placeholder {
