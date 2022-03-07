@@ -1,18 +1,3 @@
-body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #5e42a6;
-    background-image: url("../images/intro.svg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    color: white;
-}
-
 header {
     background-color: #312450;
     padding: 0;
