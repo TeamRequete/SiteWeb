@@ -35,8 +35,8 @@ CREATE OR REPLACE TABLE formations_user(
   constraint fk_formation
     foreign key (formation_id) references formations(formation_id) ON DELETE CASCADE,
   constraint fk_prof
-    foreign key (prof_id) references users(ID) ON DELETE CASCADE
-  constraint ct_prof_eleve CHECK(user_id <> prof_id )
+    foreign key (prof_id) references users(ID) ON DELETE CASCADE,
+  constraint ct_prof_eleve CHECK(user_id <> prof_id)
 );
 
 SET FOREIGN_KEY_CHECKS=1;

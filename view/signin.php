@@ -1,65 +1,24 @@
-<!DOCTYPE html>
-<html lang="fr">
+<form id="formRegister" action="index.php?action=register" method="post">
+    <h1>Inscription</h1>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../css/main.css" rel="stylesheet" type="text/css">
-    <link href="../css/signin.css" rel="stylesheet" type="text/css">
-    <title>Team Requête</title>
-</head>
+    <label>Adresse mail</label>
+    <input type="email" placeholder="test@example.com" name="email" required/> <br>
 
-<body>
-    <header>
-        <headerBar>
-            <a href="index.html">
-                <h2>Team Requête</h2>
-            </a>
+    <label>Vérifier adresse mail</label>
+    <input type="email" placeholder="test@example.com" required/><br>
 
-            <menu>
-                <div class="">
-                    <a id="btn_formation" href="#formation">Formations</a>
-                </div>
-                <div class="">
-                    <a id="btn_moncul" href="#moncul">moncul</a>
-                </div>
-                <div class="">
-                    <a id="btn_allo" href="#allo">allo</a>
-                </div>
-            </menu>
+    <label>Username</label>
+    <input type="text" name="username" placeholder="UserName" required/><br>
 
-            <research>
-                <input type="text" placeholder="Rechercher sur le site" />
-                <button type="button">Rechercher</button>
-            </research>
+    <label>Mot de passe</label>
+    <input type="password" name="pass" required/><br>
 
-            <connect>
-                <a href="login.html">Connexion</a>
-                <a href="signin.html">Inscription</a>
-            </connect>
-        </headerBar>
-    </header>
+    <label>Vérifier mot de passe</label>
+    <input type="password" required/><br> Accepter les <a href="">condtions d'utilisation</a>
+    <input type="checkbox"/><br>
 
-    <form>
-        <h1>Inscription</h1>
+    <button type="submit" hidden>S'inscrire</button>
+</form>
 
-        <label>Adresse mail</label>
-        <input type="email" required/> <br>
-
-        <label>Vérifier adresse mail</label>
-        <input type="email" required/><br>
-
-        <label>Mot de passe</label>
-        <input type="password" required/><br>
-
-        <label>Vérifier mot de passe</label>
-        <input type="password" required/><br> Accepter les <a href="">condtions d'utilisation</a>
-        <input type="checkbox" /><br>
-
-        <button>S'inscrire</button>
-
-    </form>
-</body>
-
-</html>
+<script type="text/javascript" src="view/js/jquery.js" ></script>
+<script type="text/javascript" src="view/js/formChecker.js" ></script>
