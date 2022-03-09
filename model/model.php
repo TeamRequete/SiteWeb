@@ -110,6 +110,13 @@ function updateUserPass($user_id, $user_clear_pass){
   $stmt->execute([$user_pass, $user_id]);
 }
 
+function updateUserLogin($user_id, $user_login){
+  $pdo = dbConnect();
+  $sql = "UPDATE users SET user_login=? WHERE ID=?";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([$user_login, $user_id]);
+}
+
 function deconnexion(){
   session_destroy();
   header("Location: /index.php");

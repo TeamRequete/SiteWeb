@@ -70,8 +70,11 @@ function profile(){
         if($_POST['email'] !==  getUserEmail($_SESSION['id'])){
           updateUserEmail($_SESSION['id'], $_POST['email']);
         }
-        if(isset($_POST['pass'])){
+        if(isset($_POST['pass']) && $_POST['pass'] !== ""){
           updateUserPass($_SESSION['id'], $_POST['pass']);
+        }
+        if(isset($_POST['username']) && $_POST['username'] !== getUserLogin($_SESSION['id'])){
+          updateUserLogin($_SESSION['id'], $_POST['username']);
         }
 
       }else{
