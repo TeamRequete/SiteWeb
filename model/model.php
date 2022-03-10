@@ -46,6 +46,21 @@ function checkUserLogin($user_email, $user_pass){
   return false;
 }
 
+function checkUserAdmin($user_id){
+  $pdo = dbConnect();
+  $sql = "SELECT role FROM users where ID=?";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([$user_id]);
+  foreach ($stmt as $row) {
+    $role = $row[0];
+  }
+  if($role === "Admin"){
+    return true;
+  }
+  return false;
+
+}
+
 function getUserId($user_email){
   $pdo = dbConnect();
   $sql = "SELECT ID FROM users where user_email=?";
@@ -115,6 +130,14 @@ function updateUserLogin($user_id, $user_login){
   $sql = "UPDATE users SET user_login=? WHERE ID=?";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$user_login, $user_id]);
+}
+
+function dumpUser(){
+  $pdo = dbConnect();
+  $sql = "SELECT * FROM users";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([]);
+  return $stmt;
 }
 
 function deconnexion(){

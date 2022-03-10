@@ -27,6 +27,9 @@
         <a href="index.php?action=register">Inscription</a>
       <?php else: ?>
         <a href="index.php?action=profile"><?php echo(getUserLogin($_SESSION['id'])); ?></a> <!-- mettre le username du pélo -->
+        <?php if(checkUserAdmin($_SESSION["id"]) === true): ?>
+          <a href="index.php?action=admin">Administration</a>
+        <?php endif; ?>
         <a href="index.php?action=deconnexion">Deconnexion</a>
       <?php endif; ?>
     </connect>

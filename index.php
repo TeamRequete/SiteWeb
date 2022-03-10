@@ -1,7 +1,7 @@
 <?php
 require_once('./controller/controller.php');
 
-$page_whitelist = ["register","login","deconnexion","profile"];
+$page_whitelist = ["register","login","deconnexion","profile","admin"];
 
 try {
     checkSession();
@@ -18,6 +18,8 @@ try {
           }
           elseif ($_GET['action'] === $page_whitelist[3]){
             profile();
+          }elseif ($_GET['action'] === $page_whitelist[4]){
+            admin();
           }
       }
     }else{

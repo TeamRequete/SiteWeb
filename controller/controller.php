@@ -1,6 +1,11 @@
 <?php
 session_start();
 require_once("model/model.php");
+// active les erreurs il faut retirer ca en prod
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+//
 
 function index(){
   $content = requireToVar("view/formation_lst.php");
@@ -86,6 +91,20 @@ function profile(){
   }
 
   $content = requireToVar("view/profile.php");
+  if(isset($error)){
+    $content  = $content."<br/>\n";
+    $content  = $content."<span>".$error."</span>";
+  }
+  buildTemplate($content);
+}
+
+function admin(){
+  if(checkUserAdmin($_SESSION["id"]) === false){
+    header("Location: https://www.leboncoin.fr/prestations_de_services/2096863483.htm");
+    die();
+  }
+  
+  $content = requireToVar("view/admin.php");
   if(isset($error)){
     $content  = $content."<br/>\n";
     $content  = $content."<span>".$error."</span>";
