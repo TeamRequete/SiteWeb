@@ -132,6 +132,13 @@ function updateUserLogin($user_id, $user_login){
   $stmt->execute([$user_login, $user_id]);
 }
 
+function updateUserRole($user_id, $role){
+  $pdo = dbConnect();
+  $sql = "UPDATE users SET role=? WHERE ID=?";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([$role, $user_id]);
+}
+
 function dumpUser(){
   $pdo = dbConnect();
   $sql = "SELECT * FROM users";
