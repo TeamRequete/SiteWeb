@@ -13,6 +13,10 @@ function index(){
 }
 
 function register() {
+    if (isset($_SESSION['id'])) {
+      header("Location: /index.php");
+      die();
+    }
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
       // check si tout les champ sont set
       if(isset($_POST['email']) && isset($_POST['username']) && isset($_POST['pass'])){
@@ -44,6 +48,10 @@ function register() {
 }
 
 function login() {
+  if (isset($_SESSION['id'])) {
+    header("Location: /index.php");
+    die();
+  }
   if($_SERVER['REQUEST_METHOD'] === 'POST'){
     // check si tout les champ sont set
     if(isset($_POST['email']) && isset($_POST['pass'])){
@@ -118,7 +126,7 @@ function admin(){
           $error = "WTF";
         }
       }else{
-        $error = "auto demote interdit"; 
+        $error = "auto demote interdit";
       }
     }elseif(isset($_POST['new_pass']) && isset($_POST['b_newpass'])){ // password update case
       if (checkUserId($_POST['b_newpass']) === true) {
