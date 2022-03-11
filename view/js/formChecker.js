@@ -1,7 +1,7 @@
 
-email_check = false;
-pass_check = false;
-cgu_check = false;
+let email_check = false;
+let pass_check = false;
+let cgu_check = false;
 
 function checkEmail() {
   if ($("#formRegister")[0][0].value === $("#formRegister")[0][1].value) {

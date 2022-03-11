@@ -9,6 +9,7 @@ header headerBar {
     height: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
     min-height: 50px;
     align-items: center;
     color: white;
@@ -38,6 +39,7 @@ header menu div {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 header menu div a {
@@ -52,7 +54,7 @@ header menu div a {
 }
 
 header menu div:hover {
-    background-color: #392a5d;
+    background-color: rgba(0,0,0,0.5);
 }
 
 header research {
@@ -64,7 +66,7 @@ header research input {
     color: black;
     background-color: white;
     background-image: url('../images/searchicon.png');
-    background-position: 10px 10px;
+    background-position: 5.5px 5.5px;
     background-repeat: no-repeat;
     padding-left: 40px;
     border: 1px solid;
@@ -92,11 +94,19 @@ header connect a {
     padding: 7px;
     text-decoration: none;
     color: rgb(162, 162, 162);
+    transition-duration: 0.5s;
 }
 
 header connect a:hover {
     border-style: solid;
     padding: 7px;
     text-decoration: none;
-    color: rgb(84, 64, 102);
+    color: rgb(200, 100, 200);
+}
+
+header button {
+    cursor: pointer;
+}
+header button:hover {
+  background-color: rgb(255, 125, 255);
 }
