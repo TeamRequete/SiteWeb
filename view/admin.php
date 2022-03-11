@@ -14,8 +14,8 @@
      <form method="post" action="index.php?action=admin" id="<?php echo('form_promote'.$row['ID']); ?>"></form>
      <form method="post" action="index.php?action=admin" id="<?php echo('form_newpass'.$row['ID']); ?>"></form>
      <th><?php echo($row['ID']); ?></th>
-     <th><?php echo($row['user_login']); ?></th>
-     <th><?php echo($row['user_email']); ?></th>
+     <th><?php echo(htmlspecialchars($row['user_login'])); ?></th>
+     <th><?php echo(htmlspecialchars($row['user_email'])); ?></th>
      <th><?php echo($row['role']); ?></th>
      <th><?php echo($row['created_at']); ?></th>
      <th> <button form="<?php echo('form_promote'.$row['ID']); ?>" type="promote" name="promote" value="<?php echo($row['ID']); ?>" submit>promote</button> </th>
