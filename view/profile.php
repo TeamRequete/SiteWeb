@@ -3,6 +3,8 @@
   $login = getUserLogin($_SESSION['id']);
 ?>
 
+<link href="view/css/profile.css" rel="stylesheet" type="text/css">
+
 <form id="formProfile" action="index.php?action=profile" method="post">
     <h1>Profile</h1>
 

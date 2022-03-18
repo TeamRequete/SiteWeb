@@ -1,3 +1,6 @@
+<link href="view/css/signin.css" rel="stylesheet" type="text/css">
+
+
 <form id="formRegister" action="index.php?action=register" method="post">
     <h1>Inscription</h1>
 
