@@ -1,9 +1,10 @@
-# super Projet Web avec les coupains
+# Super Projet Web avec les coupains
 
-coucou c'est benjamin !!!
-<<<<<<< HEAD
-comment ca va ?
-=======
+## Tuto started
 
-klemou aime les gaufre
->>>>>>> 9cdf84354b9b2259b96c62d99ac7513fb6531830
+### Pour générer le docker
+**../SiteWeb/**
+`docker build . -t server_web`
+
+### Pour run le docker
+`docker run --rm -it -p 80:80 -v "[LIEN_RACINE_SITEWEB]:/var/www/html" server_web`
