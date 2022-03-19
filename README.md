@@ -2,8 +2,7 @@
 
 ## Tuto started
 
-### Pour générer le docker
-**../SiteWeb/**
+### Pour générer le docker, à la racine tappé :
 `docker build . -t server_web`
 
 ### Pour run le docker
