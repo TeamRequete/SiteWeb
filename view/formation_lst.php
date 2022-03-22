@@ -12,10 +12,10 @@
 
     <card>
         <a href="">
-            <img src="https://plubel-prod.u-bourgogne.fr/pluginfile.php/408227/course/overviewfiles/network-2402637_640.jpg"></img>
+            <img src="view/images/im.jpg" alt="Ta mere"/></img>
 
             <cardTitle>
-                Ouais c'est superfjef yezf ezhf ezuf hezuifh ze fhezfuizeuif
+                Ouais c'est superf yezf ezhf ezuf hezuifh ze fhezfuizeuif
             </cardTitle>
         </a>
     </card>

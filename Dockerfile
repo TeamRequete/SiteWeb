@@ -11,6 +11,9 @@ RUN mysqld --user=mysql --bootstrap --verbose=0 --skip-name-resolve --skip-netwo
 COPY ./docker_conf/database.sql /root
 RUN mysqld --user=mysql --bootstrap --verbose=0 --skip-name-resolve --skip-networking=0 < /root/database.sql
 
+RUN rm /etc/php/7.4/apache2/php.ini
+COPY ./docker_conf/php.ini /etc/php/7.4/apache2/php.ini
+
 ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
 ENV APACHE_LOG_DIR /var/log/apache2

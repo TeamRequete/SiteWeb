@@ -1,11 +1,6 @@
 <?php
 session_start();
 require_once("model/model.php");
-// active les erreurs il faut retirer ca en prod
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-//
 
 function index(){
   $content = requireToVar("view/formation_lst.php");
@@ -156,8 +151,7 @@ function admin(){
 
 function checkSession(){
   if(isset($_SESSION['id']) && checkUserId($_SESSION['id']) === false){
-    session_destroy();
-    header("Location: /index.php");
+    deconnexion();
   }
 }
 
