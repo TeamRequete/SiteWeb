@@ -72,17 +72,26 @@ function login() {
 
 function profile(){
   if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    $error="";
     // check si tout les champ sont set
     if(isset($_POST['email']) && isset($_POST['last_pass'])){
       if (checkUserLogin(getUserEmail($_SESSION['id']), $_POST['last_pass']) === true) {
         if($_POST['email'] !==  getUserEmail($_SESSION['id'])){
-          updateUserEmail($_SESSION['id'], $_POST['email']);
+          if (checkUserExist($_POST['email']) === false && strlen($_POST['email']) < 255) {
+              updateUserEmail($_SESSION['id'], $_POST['email']);
+          }else{
+              $error = $error."Email invalide ou déjà utilisé\n";
+          }
         }
         if(isset($_POST['pass']) && $_POST['pass'] !== ""){
           updateUserPass($_SESSION['id'], $_POST['pass']);
         }
         if(isset($_POST['username']) && $_POST['username'] !== getUserLogin($_SESSION['id'])){
-          updateUserLogin($_SESSION['id'], $_POST['username']);
+          if(strlen($_POST['username']) < 255){
+            updateUserLogin($_SESSION['id'], $_POST['username']);
+          }else{
+            $error = $error."nom d'utilisateur trop grand\n";
+          }
         }
 
       }else{
