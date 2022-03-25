@@ -1,0 +1,29 @@
+version: "3.2"
+
+services:
+#Mysql Container
+  mysql:
+    image: mariadb:latest
+    container_name: mariadb
+    hostname: mariadb
+    volumes:
+      - ./mapping/mysql:/var/lib/mysql
+      - ./dump:/root/dump_db
+    env_file:
+      - ./mysql.env
+    restart: always
+
+#GLPI Container
+  http:
+    build: .
+    container_name : http
+    hostname: http
+    ports:
+      - "8000:80"
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - ./mapping/html/:/var/www/html
+    environment:
+      - TIMEZONE=Europe/Paris
+    restart: always
