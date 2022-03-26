@@ -154,7 +154,7 @@ function deconnexion(){
 }
 
 function dbConnect(){
-    $db = new PDO('mysql:host=172.23.0.2;dbname=team_requete;charset=utf8', 'root', 'placeholder');
+    $db = new PDO('mysql:host=mysql;dbname=team_requete;charset=utf8', 'root', 'placeholder');
     return $db;
 }
 

@@ -1,4 +1,4 @@
-CREATE DATABASE team_requete;
+CREATE DATABASE IF NOT EXISTS team_requete;
 use team_requete;
 
 SET FOREIGN_KEY_CHECKS=0;
