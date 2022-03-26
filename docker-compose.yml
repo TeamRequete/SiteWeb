@@ -1,29 +1,47 @@
 version: "3.2"
 
 services:
-#Mysql Container
-  mysql:
-    image: mariadb:latest
-    container_name: mariadb
-    hostname: mariadb
+  php:
+    build:
+      context: './php/'
+      args:
+       PHP_VERSION: ${PHP_VERSION}
+    networks:
+      - backend
     volumes:
-      - ./mapping/mysql:/var/lib/mysql
-      - ./dump:/root/dump_db
-    env_file:
-      - ./mysql.env
-    restart: always
-
-#GLPI Container
-  http:
-    build: .
-    container_name : http
-    hostname: http
+      - ${PROJECT_ROOT}/:/var/www/html/
+    container_name: php
+  apache:
+    build:
+      context: './apache/'
+      args:
+       APACHE_VERSION: ${APACHE_VERSION}
+    depends_on:
+      - php
+      - mysql
+    networks:
+      - frontend
+      - backend
     ports:
-      - "8000:80"
+      - "80:80"
     volumes:
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
-      - ./mapping/html/:/var/www/html
+      - ${PROJECT_ROOT}/:/var/www/html/
+    container_name: apache
+  mysql:
+    image: mariadb
+    ports:
+      - "3306:3306"
+    volumes:
+            - ./mariadb/mariadb_data:/var/lib/mysql
+            - ./mariadb/team_requete.sql:/docker-entrypoint-initdb.d/team_requete.sql:ro
+    networks:
+      - backend
     environment:
-      - TIMEZONE=Europe/Paris
-    restart: always
+      MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
+      MYSQL_DATABASE: "${DB_NAME}"
+      MYSQL_USER: "${DB_USERNAME}"
+      MYSQL_PASSWORD: "${DB_PASSWORD}"
+    container_name: mysql
+networks:
+  frontend:
+  backend:
