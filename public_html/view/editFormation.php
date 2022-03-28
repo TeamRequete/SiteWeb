@@ -16,3 +16,11 @@ $stmt=getUserFormation($_SESSION['id'], $_GET['id'])->fetch();
             rows="20" cols="50"><?php echo(htmlspecialchars($stmt['content'])); ?></textarea><br>
   <button type="submit" name="button">commit</button>
 </form>
+
+<br/>
+<br/>
+
+<h2>Preview</h2>
+<br/>
+
+<?php echo(buildMarkdown($stmt['content'])) ?>
