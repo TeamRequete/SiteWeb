@@ -161,6 +161,24 @@ function notNeedSession(){
 }
 
 function editFormation(){
+  if(isset($_GET['id']) === false){
+    header("Location: /index.php");
+    die();
+  }
+  if($_SERVER['REQUEST_METHOD'] === 'POST'){
+
+    if (isset($_POST['name']) && isset($_POST['duration']) && isset($_POST['content']) && is_numeric($_POST['duration']) &&
+    intval($_POST['duration'])>=0) {
+      //check if user is profesor
+      if (getUserFormation($_SESSION['id'], $_GET['id'])->rowCount() > 0) {
+        updateUserFormation($_GET['id'], $_POST['name'], $_POST['duration'], $_POST['content']);
+      }else{
+        $error = 'WTF Pose ton burp stop baiser notre site';
+      }
+    }else{
+      $error = 'variable not set';
+    }
+  }
   $content = requireToVar("view/editFormation.php");
   if(isset($error)){
     $content  = $content."<br/>\n";
@@ -186,9 +204,34 @@ function mesFormation(){
   buildTemplate($content);
 }
 
+function formations(){
+  $content = requireToVar("view/formations.php");
+  if(isset($error)){
+    $content  = $content."<br/>\n";
+    $content  = $content."<span>".$error."</span>";
+  }
+  buildTemplate($content);
+}
+
+function showFormation(){
+  if(isset($_GET['id']) === false){
+    header("Location: /index.php");
+    die();
+  }
+  $content = requireToVar("view/showFormation.php");
+  buildTemplate($content);
+}
+
 function buildTemplate($content){
   $header_bar = requireToVar("view/select_bar.php");
   require("view/template.php");
+}
+
+function buildMarkdown($content){
+  require_once("libs/Parsedown.php");
+  $Parsedown = new Parsedown();
+  $Parsedown->setSafeMode(true); // miam miam
+  return $Parsedown->text($content);
 }
 
 ?>

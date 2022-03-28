@@ -29,6 +29,7 @@ function insertFormationUser($user_id, $formation_id, $prof_id) {
   $stmt->execute([$user_id, $formation_id, $prof_id]);
 }
 
+
 function checkUserExist($user_email){
   $pdo = dbConnect();
   $sql = "SELECT COUNT(*) FROM users where user_email=?";
@@ -113,7 +114,15 @@ function getUserFormation($user_id,$formation_id){
   $pdo = dbConnect();
   $sql = "SELECT * FROM formations where formation_id=? and prof_id=?";
   $stmt = $pdo->prepare($sql);
-  $stmt->execute([$formation_id, $prof_id]);
+  $stmt->execute([$formation_id, $user_id]);
+  return $stmt;
+}
+
+function getFormation($formation_id){
+  $pdo = dbConnect();
+  $sql = "SELECT * FROM formations where formation_id=?";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([$formation_id]);
   return $stmt;
 }
 
@@ -169,6 +178,13 @@ function updateFormation($formation_id, $name, $content, $duration) {
   $stmt->execute([$name, $content, $duration, $formation_id]);
 }
 
+function updateUserFormation($formation_id, $name, $duration, $content){
+  $pdo = dbConnect();
+  $sql = "UPDATE formations SET name=?, duration=?, content=? WHERE formation_id=?";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([$name, $duration, $content, $formation_id]);
+}
+
 function dumpUser(){
   $pdo = dbConnect();
   $sql = "SELECT * FROM users";
@@ -182,6 +198,14 @@ function dumpUserFormation($user_id){
   $sql = "SELECT * FROM formations WHERE prof_id=?";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$user_id]);
+  return $stmt;
+}
+
+function dumpFormation(){
+  $pdo = dbConnect();
+  $sql = "SELECT * FROM formations";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([]);
   return $stmt;
 }
 
