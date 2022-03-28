@@ -15,6 +15,20 @@ function insertUser($user_login, $user_pass, $user_email) {
   $stmt->execute([$user_login, $user_pass, $user_email]);
 }
 
+function insertFormation($user_id,$name) {
+  $pdo = dbConnect();
+  $sql = "INSERT INTO formations (name,prof_id,content,duration) VALUES (?,?,'',0)";
+  $stmt= $pdo->prepare($sql);
+  $stmt->execute([$name,$user_id]);
+}
+
+function insertFormationUser($user_id, $formation_id, $prof_id) {
+  $pdo = dbConnect();
+  $sql = "INSERT INTO formations_user (user_id,formation_id,prof_id) VALUES (?,?,?)";
+  $stmt= $pdo->prepare($sql);
+  $stmt->execute([$user_id, $formation_id, $prof_id]);
+}
+
 function checkUserExist($user_email){
   $pdo = dbConnect();
   $sql = "SELECT COUNT(*) FROM users where user_email=?";
@@ -95,6 +109,14 @@ function getUserEmail($user_id){
   return $email;
 }
 
+function getUserFormation($user_id,$formation_id){
+  $pdo = dbConnect();
+  $sql = "SELECT * FROM formations where formation_id=? and prof_id=?";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([$formation_id, $prof_id]);
+  return $stmt;
+}
+
 function checkUserId($user_id){
   $pdo = dbConnect();
   $sql = "SELECT COUNT(*) FROM users where ID=?";
@@ -108,6 +130,7 @@ function checkUserId($user_id){
   }
   return false;
 }
+
 
 function updateUserEmail($user_id, $user_email){
   $pdo = dbConnect();
@@ -139,11 +162,26 @@ function updateUserRole($user_id, $role){
   $stmt->execute([$role, $user_id]);
 }
 
+function updateFormation($formation_id, $name, $content, $duration) {
+  $pdo = dbConnect();
+  $sql = "UPDATE formations SET name=?,content=?,duration=? WHERE formation_id=?";
+  $stmt= $pdo->prepare($sql);
+  $stmt->execute([$name, $content, $duration, $formation_id]);
+}
+
 function dumpUser(){
   $pdo = dbConnect();
   $sql = "SELECT * FROM users";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([]);
+  return $stmt;
+}
+
+function dumpUserFormation($user_id){
+  $pdo = dbConnect();
+  $sql = "SELECT * FROM formations WHERE prof_id=?";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([$user_id]);
   return $stmt;
 }
 

@@ -5,10 +5,10 @@
 
     <menu>
         <div class="">
-          <a id="btn_formation" href="#formation">Formations</a>
+          <a id="btn_formation" href="index.php?action=formations">Formations</a>
         </div>
         <div class="">
-          <a id="btn_moncul" href="#moncul">moncul</a>
+          <a id="btn_moncul" href="index.php?action=mesFormation">MesFormation</a>
         </div>
         <div class="">
           <a id="btn_allo" href="#allo">allo</a>

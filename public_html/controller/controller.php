@@ -8,10 +8,6 @@ function index(){
 }
 
 function register() {
-    if (isset($_SESSION['id'])) {
-      header("Location: /index.php");
-      die();
-    }
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
       // check si tout les champ sont set
       if(isset($_POST['email']) && isset($_POST['username']) && isset($_POST['pass'])){
@@ -43,10 +39,6 @@ function register() {
 }
 
 function login() {
-  if (isset($_SESSION['id'])) {
-    header("Location: /index.php");
-    die();
-  }
   if($_SERVER['REQUEST_METHOD'] === 'POST'){
     // check si tout les champ sont set
     if(isset($_POST['email']) && isset($_POST['pass'])){
@@ -153,6 +145,45 @@ function checkSession(){
   if(isset($_SESSION['id']) && checkUserId($_SESSION['id']) === false){
     deconnexion();
   }
+}
+
+function needSession(){
+  if(isset($_SESSION['id']) === false || checkUserId($_SESSION['id']) === false){
+    deconnexion();
+  }
+}
+
+function notNeedSession(){
+  if (isset($_SESSION['id'])) {
+    header("Location: /index.php");
+    die();
+  }
+}
+
+function editFormation(){
+  $content = requireToVar("view/editFormation.php");
+  if(isset($error)){
+    $content  = $content."<br/>\n";
+    $content  = $content."<span>".$error."</span>";
+  }
+  buildTemplate($content);
+}
+
+function mesFormation(){
+  if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    if(isset($_POST["name"]) === true){
+      insertFormation($_SESSION['id'], $_POST["name"]);
+    }else{
+      $error = "WTF poste ton burp frèro";
+    }
+  }
+
+  $content = requireToVar("view/mesFormation.php");
+  if(isset($error)){
+    $content  = $content."<br/>\n";
+    $content  = $content."<span>".$error."</span>";
+  }
+  buildTemplate($content);
 }
 
 function buildTemplate($content){
