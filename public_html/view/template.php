@@ -18,8 +18,14 @@
 
 
     <?php echo $content ?>
-    
+  <footer> 
+    <?php require_once("view/footer.php"); ?>
+</footer>
 
 </body>
+
+
+
+
 
 </html>

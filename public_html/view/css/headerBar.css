@@ -54,7 +54,7 @@ header menu div a {
 }
 
 header menu div:hover {
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 header research {
@@ -107,6 +107,7 @@ header connect a:hover {
 header button {
     cursor: pointer;
 }
+
 header button:hover {
-  background-color: rgb(255, 125, 255);
+    background-color: rgb(255, 125, 255);
 }
