@@ -1,0 +1,31 @@
+form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+form label {
+    font-size: larger;
+}
+
+form textarea {
+    width: 100%;
+}
+
+form #properties label {
+    margin-left: 30px;
+}
+
+form #contentFormation {
+    margin-top: 30px;
+}
+
+#preview {
+    display: flex;
+    flex-direction: column;
+    background-color: gray;
+    margin-bottom: 50px;
+    padding: 30px;
+    width: 80%;
+}
