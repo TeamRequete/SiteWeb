@@ -9,4 +9,4 @@
 <h2>La formation dure: <?php echo(htmlspecialchars($stmt['duration'])); ?></h2>
 <br>
 <br>
-<span><?php echo(buildMarkdown($stmt['content'])); ?></span>
+<showFormation><?php echo(buildMarkdown($stmt['content'])); ?></showFormation>

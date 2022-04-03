@@ -222,6 +222,11 @@ function showFormation(){
   buildTemplate($content);
 }
 
+function forumThread(){
+  $content = requireToVar("view/forum_thread.php");
+  buildTemplate($content);
+}
+
 function buildTemplate($content){
   $header_bar = requireToVar("view/select_bar.php");
   require("view/template.php");

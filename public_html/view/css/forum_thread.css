@@ -1,0 +1,39 @@
+forumThread {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 100px 30px 100px;
+}
+
+forumThread titre {
+    padding-top: 10px;
+    padding-bottom: 30px;
+    text-align: center;
+    font-size: 30px;
+}
+
+forumThread bulleDiscution:nth-of-type(2n) {
+    background-color: rgb(97, 97, 97);
+}
+
+forumThread bulleDiscution:nth-of-type(2n-1) {
+    background-color: rgb(58, 56, 56);
+}
+
+forumThread bulleDiscution {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+forumThread bulleDiscution enTete {
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+forumThread bulleDiscution enTete pseudo {
+    font-size: 20px;
+}
+
+forumThread bulleDiscution content {}
