@@ -1,8 +1,8 @@
 #footer {
-    position: fixed;
-    width: 100%;
+    position: sticky;
     left: 0;
-    bottom: 5px;
+    bottom: 0;
+    /*width: 100%;
     margin: 0 auto;
-    text-align: center;
+    text-align: center;*/
 }
