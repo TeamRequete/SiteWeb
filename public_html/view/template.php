@@ -15,12 +15,14 @@
     <header>
       <?php echo "$header_bar" ?>
     </header>
+    <bodyContent>
+      <?php echo $content ?>
+    </bodyContent>
 
-
-    <?php echo $content ?>
+    
   <footer> 
-    <?php require_once("view/footer.php"); ?>
-</footer>
+    © 2022 Team-Requete
+  </footer>
 
 </body>
 
