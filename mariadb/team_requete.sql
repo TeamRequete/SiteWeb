@@ -19,6 +19,7 @@ DROP TABLE IF EXISTS formations;
 CREATE OR REPLACE TABLE formations(
   formation_id int auto_increment,
   name varchar(255) not null,
+  filename varchar(255) default '',
   content TEXT not null,
   duration int not null,
   prof_id int not null,
@@ -30,6 +31,7 @@ DROP TABLE IF EXISTS formations_user;
 CREATE OR REPLACE TABLE formations_user(
   user_id int not null,
   formation_id int not null,
+  vote TINYINT(1) default 0,
   primary key (user_id, formation_id),
   constraint fk_user
     foreign key (user_id) references users(ID) ON DELETE CASCADE,

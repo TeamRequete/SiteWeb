@@ -7,12 +7,17 @@ $stmt=getUserFormation($_SESSION['id'], $_GET['id'])->fetch();
 ?>
 
 
-<form class="" action="<?php echo("index.php?action=editFormation&id=".$_GET['id']); ?>" method="post">
+<form class="" action="<?php echo("index.php?action=editFormation&id=".$_GET['id']); ?>" method="post" enctype="multipart/form-data">
   <section id="properties">
     <label for="name">Nom</label>
     <input type="text" name="name" value="<?php echo(htmlspecialchars($stmt['name'])); ?>">
     <label for="duration">Durée en heures</label>
     <input type="number" name="duration" value="<?php echo(htmlspecialchars($stmt['duration'])); ?>">
+    <!-- input file -->
+    <label for="imgFormation">Image de la formation:</label>
+    <input type="file"
+       id="imgFormation" name="imgFormation"
+       accept="image/png, image/jpg, image/gif">
   </section>
   <section id="contentFormation">
     <label for="content">formation content (MarkDown)</label>

@@ -185,6 +185,13 @@ function updateUserFormation($formation_id, $name, $duration, $content){
   $stmt->execute([$name, $duration, $content, $formation_id]);
 }
 
+function updateFilenameFormation($formation_id, $fileName){
+  $pdo = dbConnect();
+  $sql = "UPDATE formations SET filename=? WHERE formation_id=?";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([$fileName, $formation_id]);
+}
+
 function dumpUser(){
   $pdo = dbConnect();
   $sql = "SELECT * FROM users";
@@ -208,6 +215,26 @@ function dumpFormation(){
   $stmt->execute([]);
   return $stmt;
 }
+
+function deleteFilenameFormation($formation_id){
+  $pdo = dbConnect();
+  $sql = "SELECT filename FROM formations where formation_id=?";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([$formation_id]);
+  foreach ($stmt as $row) {
+    if ($row[0] !== '') {
+      $fileName = __DIR__."/../uploads/".$row[0];
+      if(file_exists($fileName)){
+        unlink($fileName);
+      }
+    }
+  }
+
+  $sql = "UPDATE formations SET filename='' where formation_id=?";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([$formation_id]);
+}
+
 
 function deconnexion(){
   session_destroy();

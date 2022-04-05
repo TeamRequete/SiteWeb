@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once("model/model.php");
+require_once("model/uploadfile.php");
 
 function index(){
   $content = requireToVar("view/formation_lst.php");
@@ -165,6 +166,7 @@ function editFormation(){
     header("Location: /index.php");
     die();
   }
+
   if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     if (isset($_POST['name']) && isset($_POST['duration']) && isset($_POST['content']) && is_numeric($_POST['duration']) &&
@@ -172,6 +174,12 @@ function editFormation(){
       //check if user is profesor
       if (getUserFormation($_SESSION['id'], $_GET['id'])->rowCount() > 0) {
         updateUserFormation($_GET['id'], $_POST['name'], $_POST['duration'], $_POST['content']);
+        // photo de la formation
+        if(isset($_FILES['imgFormation'])){ //un fichier est envoye
+          $file_name = secure_save_file($_FILES['imgFormation']);
+          deleteFilenameFormation($_GET['id']);
+          updateFilenameFormation($_GET['id'], $file_name);
+        }
       }else{
         $error = 'WTF Pose ton burp stop baiser notre site';
       }
