@@ -10,3 +10,11 @@
 <br>
 <br>
 <showFormation><?php echo(buildMarkdown($stmt['content'])); ?></showFormation>
+
+<?php if(checkUserFormation($_SESSION['id'], $_GET['id'])): ?>
+  <?php if(checkUpVote($_SESSION['id'], $_GET['id'])): ?>
+    <a href="<?php echo("index.php?action=upvoteFormation&id=".$stmt["formation_id"]); ?>"><button type="submit" value="<?php echo($row['formation_id']); ?>">DownVote</button></a>
+  <?php else: ?>
+    <a href="<?php echo("index.php?action=upvoteFormation&id=".$stmt["formation_id"]); ?>"><button type="submit" value="<?php echo($row['formation_id']); ?>">UpVote</button></a>
+  <?php endif; ?>
+<?php endif; ?>

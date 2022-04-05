@@ -1,7 +1,7 @@
 <?php
 require_once('./controller/controller.php');
 
-$page_whitelist = ["register","login","deconnexion","profile","admin","editFormation","mesFormation","formations","showFormation","forumThread"];
+$page_whitelist = ["register","login","deconnexion","profile","admin","editFormation","mesFormation","formations","showFormation","followFormation","unFollowFormation","upvoteFormation","forumThread"];
 
 try {
     checkSession();
@@ -37,6 +37,15 @@ try {
             needSession();
             showFormation();
           }elseif ($_GET['action'] === $page_whitelist[9]){
+            needSession();
+            followFormation();
+          }elseif ($_GET['action'] === $page_whitelist[10]){
+            needSession();
+            unFollowFormation();
+          }elseif ($_GET['action'] === $page_whitelist[11]){
+            needSession();
+            upvoteFormation();
+          }elseif ($_GET['action'] === $page_whitelist[12]){
             needSession();
             forumThread();
           }

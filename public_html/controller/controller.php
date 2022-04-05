@@ -148,7 +148,7 @@ function checkSession(){
   }
 }
 
-function needSession(){
+function needSession(){ //TODO ca va pas ca a retravailler
   if(isset($_SESSION['id']) === false || checkUserId($_SESSION['id']) === false){
     deconnexion();
   }
@@ -222,12 +222,44 @@ function formations(){
 }
 
 function showFormation(){
-  if(isset($_GET['id']) === false){
-    header("Location: /index.php");
+  if(isset($_GET['id']) === false || checkFormationExist($_GET['id']) === false){
+    header("Location: /index.php?action=formations");
     die();
   }
   $content = requireToVar("view/showFormation.php");
   buildTemplate($content);
+}
+
+function followFormation(){
+  if(isset($_GET['id']) && checkFormationExist($_GET['id'])){
+    insertFormationUser($_SESSION['id'], $_GET['id']);
+  }
+
+  header("Location: /index.php?action=formations"); //TODO faire en ajax
+  die();
+}
+
+function unFollowFormation(){
+  if(isset($_GET['id']) && checkFormationExist($_GET['id']) ){
+    deleteFormationUser($_SESSION['id'], $_GET['id']);
+  }
+
+  header("Location: /index.php?action=formations"); //TODO faire en ajax
+  die();
+}
+
+function upvoteFormation(){
+  if(isset($_GET['id']) && checkFormationExist($_GET['id'])){
+    if(checkUserFormation($_SESSION['id'], $_GET['id'])){ // le user follow
+        if(checkUpVote($_SESSION['id'], $_GET['id'])){
+          insertUpVote($_SESSION['id'], $_GET['id'], 0);
+        }else{
+          insertUpVote($_SESSION['id'], $_GET['id'], 1);
+        }
+    }
+  }
+  header("Location: /index.php?action=showFormation&id=".$_GET['id']);
+  die();
 }
 
 function forumThread(){

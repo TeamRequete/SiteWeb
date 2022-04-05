@@ -22,11 +22,18 @@ function insertFormation($user_id,$name) {
   $stmt->execute([$name,$user_id]);
 }
 
-function insertFormationUser($user_id, $formation_id, $prof_id) {
+function insertFormationUser($user_id, $formation_id) {
   $pdo = dbConnect();
-  $sql = "INSERT INTO formations_user (user_id,formation_id,prof_id) VALUES (?,?,?)";
+  $sql = "INSERT INTO formations_user (user_id,formation_id) VALUES (?,?)";
   $stmt= $pdo->prepare($sql);
-  $stmt->execute([$user_id, $formation_id, $prof_id]);
+  $stmt->execute([$user_id, $formation_id]);
+}
+
+function insertUpVote($user_id, $formation_id, $value){
+  $pdo = dbConnect();
+  $sql = "UPDATE formations_user SET vote=? WHERE user_id=? AND formation_id=?";
+  $stmt= $pdo->prepare($sql);
+  $stmt->execute([$value, $user_id, $formation_id]);
 }
 
 
@@ -35,7 +42,35 @@ function checkUserExist($user_email){
   $sql = "SELECT COUNT(*) FROM users where user_email=?";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$user_email]);
-  foreach ($stmt as $row) {
+  foreach ($stmt as $row) { //TODO goto ligne 54
+    $ret = intval($row[0]);
+  }
+  if($ret === 0){
+    return false;
+  }
+  return true;
+}
+
+function checkFormationExist($formation_id){
+  $pdo = dbConnect();
+  $sql = "SELECT COUNT(*) FROM formations where formation_id=?";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([$formation_id]);
+  foreach ($stmt as $row) { // a changer sans le foreach TODO goto ligne 40
+    $ret = intval($row[0]);
+  }
+  if($ret === 0){
+    return false;
+  }
+  return true;
+}
+
+function checkUserFormation($user_id, $formation_id){
+  $pdo = dbConnect();
+  $sql = "SELECT COUNT(*) FROM formations_user where formation_id=? AND user_id=?";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([$formation_id, $user_id]);
+  foreach ($stmt as $row) { // a changer sans le foreach TODO
     $ret = intval($row[0]);
   }
   if($ret === 0){
@@ -74,6 +109,17 @@ function checkUserAdmin($user_id){
   }
   return false;
 
+}
+
+function checkUpVote($user_id, $formation_id){
+  $pdo = dbConnect();
+  $sql = "SELECT vote FROM formations_user WHERE user_id=? AND formation_id=?";
+  $stmt= $pdo->prepare($sql);
+  $stmt->execute([$user_id, $formation_id]);
+  if(intval($stmt->fetch()[0]) === 1){
+    return true;
+  }
+  return false;
 }
 
 function getUserId($user_email){
@@ -124,6 +170,28 @@ function getFormation($formation_id){
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$formation_id]);
   return $stmt;
+}
+
+function getFollowFormation($formation_id){
+  $pdo = dbConnect();
+  $sql = "SELECT COUNT(*) FROM formations_user where formation_id=?";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([$formation_id]);
+  foreach ($stmt as $row) { // TODO je sais faut que je regarde comment faire propre
+    $size = intval($row[0]);
+  }
+  return $size;
+}
+
+function getVoteFormation($formation_id){
+  $pdo = dbConnect();
+  $sql = "SELECT COUNT(*) FROM formations_user where formation_id=? AND vote=1";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([$formation_id]);
+  foreach ($stmt as $row) { // TODO je sais je sais
+    $size = intval($row[0]);
+  }
+  return $size;
 }
 
 function checkUserId($user_id){
@@ -216,6 +284,14 @@ function dumpFormation(){
   return $stmt;
 }
 
+function dumpFollowFormation($user_id){
+  $pdo = dbConnect();
+  $sql = "SELECT * FROM formations WHERE formation_id IN (SELECT formation_id FROM formations_user WHERE user_id=?);";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([$user_id]);
+  return $stmt;
+}
+
 function deleteFilenameFormation($formation_id){
   $pdo = dbConnect();
   $sql = "SELECT filename FROM formations where formation_id=?";
@@ -234,6 +310,15 @@ function deleteFilenameFormation($formation_id){
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$formation_id]);
 }
+
+function deleteFormationUser($user_id, $formation_id){
+  $pdo = dbConnect();
+  $sql = "DELETE FROM formations_user WHERE formation_id=? AND user_id=?";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([$formation_id, $user_id]);
+}
+
+
 
 
 function deconnexion(){
