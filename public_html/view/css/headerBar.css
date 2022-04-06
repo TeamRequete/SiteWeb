@@ -10,7 +10,8 @@ header headerBar {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    min-height: 50px;
+    min-height: 80px;
+    max-height: 80px;
     align-items: center;
     color: white;
 }

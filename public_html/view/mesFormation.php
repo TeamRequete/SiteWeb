@@ -7,13 +7,13 @@
 <!-- toutes les formations suivie -->
 <?php $result=dumpFollowFormation($_SESSION['id']); ?>
 <?php if($result->rowCount() > 0): ?>
-<h1>Formations suivie</h1>
+<h1>Formations suivies</h1>
 <table>
   <thead>
     <tr>
-        <th>Picture</th>
+        <th>Image</th>
         <th>Nom</th>
-        <th>Duree</th>
+        <th>Durée</th>
         <th>Date</th>
         <th>Show</th>
     </tr>
@@ -36,13 +36,14 @@
 <br/>
 <br/>
 
-<form method="post" action="index.php?action=mesFormation">
-    <h1>Crée formation</h1>
-
+<form id="createFormationForm" method="post" action="index.php?action=mesFormation">
+    <h1>Créer formation</h1>
+  <formFormation>
     <label>Nom</label>
     <input type="text" name="name" required/> <br>
 
-    <button type="submit">Crée</button>
+    <button type="submit">Créer</button>
+    </formFormation>
 </form>
 
 

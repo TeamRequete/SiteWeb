@@ -16,3 +16,25 @@ table tbody tr th {
     border-bottom: 3px solid cyan;
     padding: 3px 10px 3px 10px;
 }
+
+table tbody tr th img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+}
+
+#createFormationForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#createFormationForm formFormation {
+    display: flex;
+    flex-direction: row;
+}
+
+#createFormationForm formFormation label {
+    margin-right: 10px;
+    font-size: larger;
+}

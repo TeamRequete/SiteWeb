@@ -7,9 +7,9 @@
 <table>
   <thead>
     <tr>
-        <th>Picture</th>
+        <th>Image</th>
         <th>Nom</th>
-        <th>Duree</th>
+        <th>Durée</th>
         <th>Date</th>
         <th>Show</th>
         <th>Follow</th>
