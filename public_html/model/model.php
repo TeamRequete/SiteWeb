@@ -43,6 +43,13 @@ function insertForum($user_id, $formation_id, $name){
   $stmt->execute([$formation_id, $user_id, $name]);
 }
 
+function insertForumThread($user_id, $forum_id,$content){
+  $pdo = dbConnect();
+  $sql = "INSERT INTO forum_thread (forum_id,user_id,content) VALUES (?,?,?)";
+  $stmt= $pdo->prepare($sql);
+  $stmt->execute([$forum_id, $user_id, $content]);
+}
+
 
 function checkUserExist($user_email){
   $pdo = dbConnect();
@@ -145,10 +152,7 @@ function getUserLogin($user_id){
   $sql = "SELECT user_login FROM users where ID=?";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$user_id]);
-  foreach ($stmt as $row) {
-    $login = $row[0];
-  }
-  return $login;
+  return $stmt->fetch()[0];
 }
 
 
@@ -201,6 +205,14 @@ function getVoteFormation($formation_id){
   return $size;
 }
 
+function getForum($formation_id, $forum_id){
+  $pdo = dbConnect();
+  $sql = "SELECT * FROM forum WHERE formation_id=? AND forum_id=?";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([$formation_id, $forum_id]);
+  return $stmt->fetch();
+}
+
 function checkUserId($user_id){
   $pdo = dbConnect();
   $sql = "SELECT COUNT(*) FROM users where ID=?";
@@ -210,6 +222,17 @@ function checkUserId($user_id){
     $size = intval($row[0]);
   }
   if($size === 1){
+    return true;
+  }
+  return false;
+}
+
+function checkForum($forum_id){
+  $pdo = dbConnect();
+  $sql = "SELECT COUNT(*) FROM forum where forum_id=?";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([$forum_id]);
+  if(intval($stmt->fetch()[0]) === 1){
     return true;
   }
   return false;
@@ -304,6 +327,14 @@ function dumpForum($formation_id){
   $sql = "SELECT * FROM forum WHERE formation_id=?";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$formation_id]);
+  return $stmt;
+}
+
+function dumpForumThread($forum_id){
+  $pdo = dbConnect();
+  $sql = "SELECT * FROM forum_thread WHERE forum_id=?";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([$forum_id]);
   return $stmt;
 }
 

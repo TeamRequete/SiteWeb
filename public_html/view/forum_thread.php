@@ -1,127 +1,30 @@
 <link href="view/css/forum_thread.css" rel="stylesheet" type="text/css">
 
-<forumThread>
-    <titre>Salut</titre>
+<?php $result=dumpForumThread($_GET['forumId']) ?>
+<?php if($result->rowCount()>0): ?>
 
-    <bulleDiscution>
-        <enTete>
-            <pseudo>Klemou</pseudo>
-            <date>03/04/2022 16:08</date>
-        </enTete>
-        <content>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id neque justo. Cras congue malesuada ex, vel suscipit turpis convallis vitae. Praesent suscipit arcu vel aliquam scelerisque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas ut viverra magna, id venenatis lacus. Nulla quam est, iaculis id placerat vel, sagittis nec purus. Duis luctus lacinia nibh, at luctus elit vestibulum ornare.
-        </content>
-    </bulleDiscution>
+  <forumThread>
+      <titre><?php echo(htmlspecialchars(getForum($_GET['id'], $_GET['forumId'])['content'])); ?></titre>
+      <?php foreach($result as $row): ?>
+        
+      <bulleDiscution>
+          <enTete>
+              <pseudo><?php echo(htmlspecialchars(getUserLogin($row['user_id']))) ?></pseudo>
+              <date><?php echo(htmlspecialchars($row['created_at'])) ?></date>
+          </enTete>
+          <content>
+              <?php echo(htmlspecialchars($row['content'])) ?>
+          </content>
+      </bulleDiscution>
 
-    <bulleDiscution>
-        <enTete>
-            <pseudo>Klemou</pseudo>
-            <date>03/04/2022 16:08</date>
-        </enTete>
-        <content>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id neque justo. Cras congue malesuada ex, vel suscipit turpis convallis vitae. Praesent suscipit arcu vel aliquam scelerisque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas ut viverra magna, id venenatis lacus. Nulla quam est, iaculis id placerat vel, sagittis nec purus. Duis luctus lacinia nibh, at luctus elit vestibulum ornare.
-        </content>
-    </bulleDiscution>
+      <?php endforeach; ?>
 
-    <bulleDiscution>
-        <enTete>
-            <pseudo>Klemou</pseudo>
-            <date>03/04/2022 16:08</date>
-        </enTete>
-        <content>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id neque justo. Cras congue malesuada ex, vel suscipit turpis convallis vitae. Praesent suscipit arcu vel aliquam scelerisque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas ut viverra magna, id venenatis lacus. Nulla quam est, iaculis id placerat vel, sagittis nec purus. Duis luctus lacinia nibh, at luctus elit vestibulum ornare.
-        </content>
-    </bulleDiscution>
+  </forumTread>
+<?php endif; ?>
 
-    <bulleDiscution>
-        <enTete>
-            <pseudo>Klemou</pseudo>
-            <date>03/04/2022 16:08</date>
-        </enTete>
-        <content>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id neque justo. Cras congue malesuada ex, vel suscipit turpis convallis vitae. Praesent suscipit arcu vel aliquam scelerisque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas ut viverra magna, id venenatis lacus. Nulla quam est, iaculis id placerat vel, sagittis nec purus. Duis luctus lacinia nibh, at luctus elit vestibulum ornare.
-        </content>
-    </bulleDiscution>
-
-    <bulleDiscution>
-        <enTete>
-            <pseudo>Klemou</pseudo>
-            <date>03/04/2022 16:08</date>
-        </enTete>
-        <content>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id neque justo. Cras congue malesuada ex, vel suscipit turpis convallis vitae. Praesent suscipit arcu vel aliquam scelerisque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas ut viverra magna, id venenatis lacus. Nulla quam est, iaculis id placerat vel, sagittis nec purus. Duis luctus lacinia nibh, at luctus elit vestibulum ornare.
-        </content>
-    </bulleDiscution>
-
-    <bulleDiscution>
-        <enTete>
-            <pseudo>Klemou</pseudo>
-            <date>03/04/2022 16:08</date>
-        </enTete>
-        <content>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id neque justo. Cras congue malesuada ex, vel suscipit turpis convallis vitae. Praesent suscipit arcu vel aliquam scelerisque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas ut viverra magna, id venenatis lacus. Nulla quam est, iaculis id placerat vel, sagittis nec purus. Duis luctus lacinia nibh, at luctus elit vestibulum ornare.
-        </content>
-    </bulleDiscution>
-
-    <bulleDiscution>
-        <enTete>
-            <pseudo>Klemou</pseudo>
-            <date>03/04/2022 16:08</date>
-        </enTete>
-        <content>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id neque justo. Cras congue malesuada ex, vel suscipit turpis convallis vitae. Praesent suscipit arcu vel aliquam scelerisque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas ut viverra magna, id venenatis lacus. Nulla quam est, iaculis id placerat vel, sagittis nec purus. Duis luctus lacinia nibh, at luctus elit vestibulum ornare.
-        </content>
-    </bulleDiscution>
-
-    <bulleDiscution>
-        <enTete>
-            <pseudo>Klemou</pseudo>
-            <date>03/04/2022 16:08</date>
-        </enTete>
-        <content>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id neque justo. Cras congue malesuada ex, vel suscipit turpis convallis vitae. Praesent suscipit arcu vel aliquam scelerisque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas ut viverra magna, id venenatis lacus. Nulla quam est, iaculis id placerat vel, sagittis nec purus. Duis luctus lacinia nibh, at luctus elit vestibulum ornare.
-        </content>
-    </bulleDiscution>
-
-    <bulleDiscution>
-        <enTete>
-            <pseudo>Klemou</pseudo>
-            <date>03/04/2022 16:08</date>
-        </enTete>
-        <content>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id neque justo. Cras congue malesuada ex, vel suscipit turpis convallis vitae. Praesent suscipit arcu vel aliquam scelerisque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas ut viverra magna, id venenatis lacus. Nulla quam est, iaculis id placerat vel, sagittis nec purus. Duis luctus lacinia nibh, at luctus elit vestibulum ornare.
-        </content>
-    </bulleDiscution>
-
-    <bulleDiscution>
-        <enTete>
-            <pseudo>Klemou</pseudo>
-            <date>03/04/2022 16:08</date>
-        </enTete>
-        <content>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id neque justo. Cras congue malesuada ex, vel suscipit turpis convallis vitae. Praesent suscipit arcu vel aliquam scelerisque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas ut viverra magna, id venenatis lacus. Nulla quam est, iaculis id placerat vel, sagittis nec purus. Duis luctus lacinia nibh, at luctus elit vestibulum ornare.
-        </content>
-    </bulleDiscution>
-    
-    <bulleDiscution>
-        <enTete>
-            <pseudo>Klemou</pseudo>
-            <date>03/04/2022 16:08</date>
-        </enTete>
-        <content>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id neque justo. Cras congue malesuada ex, vel suscipit turpis convallis vitae. Praesent suscipit arcu vel aliquam scelerisque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas ut viverra magna, id venenatis lacus. Nulla quam est, iaculis id placerat vel, sagittis nec purus. Duis luctus lacinia nibh, at luctus elit vestibulum ornare.
-        </content>
-    </bulleDiscution>
-
-    <bulleDiscution>
-        <enTete>
-            <pseudo>Klemou</pseudo>
-            <date>03/04/2022 16:08</date>
-        </enTete>
-        <content>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id neque justo. Cras congue malesuada ex, vel suscipit turpis convallis vitae. Praesent suscipit arcu vel aliquam scelerisque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas ut viverra magna, id venenatis lacus. Nulla quam est, iaculis id placerat vel, sagittis nec purus. Duis luctus lacinia nibh, at luctus elit vestibulum ornare.
-        </content>
-    </bulleDiscution>
-
-
-</forumTread>
+<form id="createForumThread" method="post" action="<?php echo('index.php?action=forumShow&id='.$_GET['id'].'&forumId='.$_GET['forumId']); ?>">
+    <h1>Crée un Post</h1>
+    <label>Contenue</label>
+    <textarea rows="4" cols="50" name="post" required></textarea><br/>
+    <button type="submit">Créer</button>
+</form>

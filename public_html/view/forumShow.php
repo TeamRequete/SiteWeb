@@ -3,7 +3,7 @@
 
 <?php if($result->rowCount() > 0): ?>
   <?php foreach($result as $row): ?>
-    <h1> <a href="<?php echo('/index.php?action=forumShow&id='.$_GET['id'].'&idThread='.$row['forum_id']) ?>"><?php echo(htmlspecialchars($row['content'])) ?></a> </h1>
+    <h1> <a href="<?php echo('/index.php?action=forumShow&id='.$_GET['id'].'&forumId='.$row['forum_id']) ?>"><?php echo(htmlspecialchars($row['content'])) ?></a> </h1>
   <?php endforeach; ?>
 <?php endif; ?>
 

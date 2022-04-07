@@ -57,15 +57,12 @@ DROP TABLE IF EXISTS forum_thread;
 CREATE OR REPLACE TABLE forum_thread(
   thread_id int auto_increment,
   forum_id int not null,
-  formation_id int not null,
   user_id int not null,
   content TEXT not null,
   created_at timestamp default current_timestamp,
   primary key (thread_id),
   constraint fk_user_forum_thread
     foreign key (user_id) references users(ID) ON DELETE CASCADE,
-  constraint fk_formation_forum_thread
-    foreign key (formation_id) references formations(formation_id) ON DELETE CASCADE,
   constraint fk_forum_forum_thread
     foreign key (forum_id) references forum(forum_id) ON DELETE CASCADE
 );
