@@ -162,7 +162,7 @@ function notNeedSession(){
 }
 
 function editFormation(){
-  if(isset($_GET['id']) === false){
+  if(isset($_GET['id']) === false || getUserFormation($_SESSION['id'], $_GET['id'])->rowCount()  ==  0){ //check if user is profesor
     header("Location: /index.php");
     die();
   }
@@ -171,18 +171,14 @@ function editFormation(){
 
     if (isset($_POST['name']) && isset($_POST['duration']) && isset($_POST['content']) && is_numeric($_POST['duration']) &&
     intval($_POST['duration'])>=0) {
-      //check if user is profesor
-      if (getUserFormation($_SESSION['id'], $_GET['id'])->rowCount() > 0) {
         updateUserFormation($_GET['id'], $_POST['name'], $_POST['duration'], $_POST['content']);
         // photo de la formation
-        if(isset($_FILES['imgFormation'])){ //un fichier est envoye
+        if(isset($_FILES['imgFormation']) && $_FILES['imgFormation']['size']>0){ //un fichier est envoye
           $file_name = secure_save_file($_FILES['imgFormation']);
           deleteFilenameFormation($_GET['id']);
           updateFilenameFormation($_GET['id'], $file_name);
         }
-      }else{
-        $error = 'WTF Pose ton burp stop baiser notre site';
-      }
+
     }else{
       $error = 'variable not set';
     }
