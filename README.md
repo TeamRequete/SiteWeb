@@ -1,5 +1,8 @@
 # Super Projet Web avec les coupains
 
+projet pour L3 info
+faire un site de formation
+
 ## Tuto start
 
 ### Pour run le docker :
