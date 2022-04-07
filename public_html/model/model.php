@@ -36,6 +36,13 @@ function insertUpVote($user_id, $formation_id, $value){
   $stmt->execute([$value, $user_id, $formation_id]);
 }
 
+function insertForum($user_id, $formation_id, $name){
+  $pdo = dbConnect();
+  $sql = "INSERT INTO forum (formation_id,user_id,content) VALUES (?,?,?)";
+  $stmt= $pdo->prepare($sql);
+  $stmt->execute([$formation_id, $user_id, $name]);
+}
+
 
 function checkUserExist($user_email){
   $pdo = dbConnect();
@@ -289,6 +296,14 @@ function dumpFollowFormation($user_id){
   $sql = "SELECT * FROM formations WHERE formation_id IN (SELECT formation_id FROM formations_user WHERE user_id=?);";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$user_id]);
+  return $stmt;
+}
+
+function dumpForum($formation_id){
+  $pdo = dbConnect();
+  $sql = "SELECT * FROM forum WHERE formation_id=?";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([$formation_id]);
   return $stmt;
 }
 

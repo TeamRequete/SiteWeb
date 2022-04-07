@@ -11,7 +11,7 @@
           <a id="btn_moncul" href="index.php?action=mesFormation">Mes Formation</a>
         </div>
         <div class="">
-          <a id="btn_allo" href="#Forum">Forum</a>
+          <a id="btn_allo" href="index.php?action=forumLst">Forum</a>
         </div>
     </menu>
 

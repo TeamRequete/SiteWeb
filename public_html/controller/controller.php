@@ -263,6 +263,31 @@ function forumThread(){
   buildTemplate($content);
 }
 
+function forumLst(){
+  $content = requireToVar("view/forumLst.php");
+  buildTemplate($content);
+}
+
+function forumShow(){
+  if(isset($_GET['id']) === false || checkUserFormation($_SESSION['id'], $_GET['id']) === false){
+    header("Location: /index.php?action=forumLst");
+    die();
+  }
+
+  if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    if(isset($_POST['name'])){
+      insertForum($_SESSION['id'], $_GET['id'], $_POST['name']);
+    }
+  }
+  if(isset($_GET['idThread'])){
+    $content = requireToVar("view/forum_thread.php");
+  }else{
+    $content = requireToVar("view/forumShow.php");
+  }
+
+  buildTemplate($content);
+}
+
 function buildTemplate($content){
   $header_bar = requireToVar("view/select_bar.php");
   require("view/template.php");
