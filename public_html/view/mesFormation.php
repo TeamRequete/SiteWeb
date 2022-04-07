@@ -41,9 +41,8 @@
   <formFormation>
     <label>Nom</label>
     <input type="text" name="name" required/> <br>
-
     <button type="submit">Créer</button>
-    </formFormation>
+  </formFormation>
 </form>
 
 

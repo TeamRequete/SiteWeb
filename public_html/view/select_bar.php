@@ -4,15 +4,9 @@
     </a>
 
     <menu>
-        <div class="">
           <a id="btn_formation" href="index.php?action=formations">Formations</a>
-        </div>
-        <div class="">
           <a id="btn_moncul" href="index.php?action=mesFormation">Mes Formation</a>
-        </div>
-        <div class="">
           <a id="btn_allo" href="index.php?action=forumLst">Forum</a>
-        </div>
     </menu>
 
     <research>

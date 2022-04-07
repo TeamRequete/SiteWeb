@@ -16,13 +16,13 @@ header headerBar {
     color: white;
 }
 
-header h2 {
+header headerBar h2 {
     text-transform: uppercase;
     margin-left: 35px;
     color: white;
 }
 
-header a {
+header headerBar a {
     text-decoration: none;
 }
 
@@ -34,35 +34,29 @@ header headerBar menu {
     margin-left: 20px;
 }
 
-header menu div {
+header headerBar menu a {
     height: 100%;
-    color: rgb(97, 11, 90);
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-}
-
-header menu div a {
-    display: flex;
-    text-decoration: none;
-    font-size: 20pt;
-    color: white;
     text-align: center;
-    justify-content: center;
-    margin-left: 10px;
-    margin-right: 10px;
+    font-size: 20pt;
+    margin: 0 10px 0 10px;
+    padding: 0 10px 0 10px;
+    text-decoration: none;
+    color: rgb(97, 11, 90);
+    color: white;
 }
 
-header menu div:hover {
+header headerBar menu a:hover {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-header research {
+header headerBar research {
     margin-left: 50px;
 }
 
-header research input {
+header headerBar research input {
     height: 30px;
     color: black;
     background-color: white;
@@ -74,23 +68,23 @@ header research input {
     border-color: black;
 }
 
-header research input::placeholder {
+header headerBar research input::placeholder {
     color: black;
 }
 
-header research button {
+header headerBar research button {
     height: 25px;
     border: 1px solid;
     border-color: black;
     height: 34px;
 }
 
-header connect {
+header headerBar connect {
     margin-left: 60px;
     margin-right: 35px;
 }
 
-header connect a {
+header headerBar connect a {
     border-style: solid;
     padding: 7px;
     text-decoration: none;
@@ -98,17 +92,17 @@ header connect a {
     transition-duration: 0.5s;
 }
 
-header connect a:hover {
+header headerBar connect a:hover {
     border-style: solid;
     padding: 7px;
     text-decoration: none;
     color: rgb(200, 100, 200);
 }
 
-header button {
+header headerBar button {
     cursor: pointer;
 }
 
-header button:hover {
+header headerBar button:hover {
     background-color: rgb(255, 125, 255);
 }

@@ -23,8 +23,7 @@
 <?php endif; ?>
 
 <form id="createForumThread" method="post" action="<?php echo('index.php?action=forumShow&id='.$_GET['id'].'&forumId='.$_GET['forumId']); ?>">
-    <h1>Crée un Post</h1>
-    <label>Contenue</label>
+    <h1>Créer un Post</h1>
     <textarea rows="4" cols="50" name="post" required></textarea><br/>
     <button type="submit">Créer</button>
 </form>
