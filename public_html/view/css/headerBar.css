@@ -1,5 +1,5 @@
 header {
-    background-color: #312450;
+    background-color: #df4937;
     padding: 0;
     margin: 0;
     width: 100%;
@@ -44,12 +44,12 @@ header headerBar menu a {
     margin: 0 10px 0 10px;
     padding: 0 10px 0 10px;
     text-decoration: none;
-    color: rgb(97, 11, 90);
     color: white;
 }
 
 header headerBar menu a:hover {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #962d21;
+    transition-duration: 0.5s;
 }
 
 header headerBar research {
@@ -85,18 +85,17 @@ header headerBar connect {
 }
 
 header headerBar connect a {
-    border-style: solid;
     padding: 7px;
     text-decoration: none;
-    color: rgb(162, 162, 162);
-    transition-duration: 0.5s;
+    color: white;
+    font-size: 15pt;
 }
 
 header headerBar connect a:hover {
-    border-style: solid;
     padding: 7px;
+    transition-duration: 0.5s;
     text-decoration: none;
-    color: rgb(200, 100, 200);
+    color: #962d21;
 }
 
 header headerBar button {
@@ -104,5 +103,6 @@ header headerBar button {
 }
 
 header headerBar button:hover {
-    background-color: rgb(255, 125, 255);
+    background-color: #d49625;
+    transition-duration: 0.5s;
 }

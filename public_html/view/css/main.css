@@ -2,7 +2,7 @@ html,
 body {
     margin: 0;
     height: 100%;
-    background-color: #5e42a6;
+    background-color: #333333;
     background-image: url("../images/intro.svg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -23,7 +23,8 @@ body bodyContent {
 
 body footer {
     display: table-row;
-    background-color: grey;
+    background-color: #333333;
+    color: #d49625;
     text-align: center;
     font-size: 20px;
     height: 20px;
