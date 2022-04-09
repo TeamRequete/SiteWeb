@@ -1,0 +1,97 @@
+mesFormations {
+    text-align: center;
+}
+
+mesFormations listFormations {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+mesFormations listFormations card {
+    border-style: solid;
+    border-color: wheat;
+    padding: 15px;
+    max-width: 300px;
+    margin: 15px 45px 45px 45px;
+}
+
+mesFormations listFormations card a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: white;
+}
+
+mesFormations listFormations card a img {
+    width: 300px;
+    height: 150px;
+    object-fit: cover;
+}
+
+mesFormations listFormations card a cardTitle {
+    font-size: x-large;
+    word-wrap: break-word;
+    border-style: solid;
+    margin-top: 5px;
+    padding: 3px;
+    border-width: 1px;
+}
+
+mesFormations #lineSeparator {
+    width: 80%;
+    border-top: 8px solid #bbb;
+    border-radius: 5px;
+    margin-bottom: 60px;
+}
+
+mesFormations mesFormationsCreees {
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+mesFormations table {
+    margin: 15px 0px 10px 0px;
+    padding: 3px;
+    border-style: solid;
+    border-color: black;
+}
+
+mesFormations table thead {
+    border-style: solid;
+    border-width: 5px;
+    background-color: red;
+    margin-bottom: 5px;
+}
+
+mesFormations table tbody tr th {
+    border-bottom: 3px solid cyan;
+    padding: 3px 10px 3px 10px;
+}
+
+mesFormations table tbody tr th img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+}
+
+mesFormations #createFormationForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+mesFormations #createFormationForm formFormation {
+    display: flex;
+    flex-direction: row;
+}
+
+mesFormations #createFormationForm formFormation label {
+    margin-right: 10px;
+    font-size: larger;
+}

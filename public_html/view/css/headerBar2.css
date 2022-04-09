@@ -1,0 +1,113 @@
+openMenu a {
+    position: absolute;
+    color: #962d21;
+    top: 0;
+    left: 5px;
+    font-size: 45px;
+}
+
+header headerBar {
+    width: 250px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    transform: translateX(-100%);
+    text-align: center;
+    background-color: #df4937;
+}
+
+header headerBar .closebtn {
+    position: absolute;
+    color: #962d21;
+    top: 0;
+    right: 5px;
+    font-size: 50px;
+    margin-left: 50px;
+}
+
+header headerBar h2 {
+    text-transform: uppercase;
+    color: white;
+    margin-top: 50px;
+    background-color: black;
+}
+
+header headerBar a {
+    text-decoration: none;
+}
+
+header headerBar menu {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+header headerBar menu a {
+    font-size: 20pt;
+    text-decoration: none;
+    color: white;
+    margin-bottom: 5px;
+    padding: 10px 0 10px 0;
+}
+
+header headerBar menu a:hover {
+    background-color: #962d21;
+    transition-duration: 0.5s;
+}
+
+header headerBar research {
+    margin-bottom: 45px;
+}
+
+header headerBar research input {
+    height: 30px;
+    color: black;
+    background-color: white;
+    background-image: url('../images/searchicon.png');
+    background-position: 5.5px 5.5px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+    border: 1px solid;
+    border-color: black;
+}
+
+header headerBar research input::placeholder {
+    color: black;
+}
+
+header headerBar research button {
+    height: 25px;
+    border: 1px solid;
+    border-color: black;
+    height: 34px;
+}
+
+header headerBar connect {
+    display: flex;
+    flex-direction: column;
+}
+
+header headerBar connect a {
+    padding: 3px;
+    margin-bottom: 12px;
+    text-decoration: none;
+    color: white;
+    font-size: 15pt;
+}
+
+header headerBar connect a:hover {
+    transition-duration: 0.5s;
+    text-decoration: none;
+    color: #962d21;
+}
+
+header headerBar button {
+    cursor: pointer;
+}
+
+header headerBar button:hover {
+    background-color: #d49625;
+    transition-duration: 0.5s;
+}

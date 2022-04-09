@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="view/css/main.css" rel="stylesheet" type="text/css">
     <link href="view/css/listFormations.css" rel="stylesheet" type="text/css">
-    <link href="view/css/headerBar.css" rel="stylesheet" type="text/css">
+    <link href="view/css/headerBar1.css" rel="stylesheet" type="text/css">
     <title>Team Requête</title>
 </head>
 

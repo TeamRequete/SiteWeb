@@ -1,3 +1,6 @@
+<link href="view/css/profile.css" rel="stylesheet" type="text/css">
+
+
 <?php
   $email = getUserEmail($_SESSION['id']);
   $login = getUserLogin($_SESSION['id']);
@@ -28,6 +31,14 @@
 
     <button type="submit" hidden>Commit</button>
 </form>
+
+<switchChangeStyle>
+  <h3>Changer style site</h3>
+  <label class="switch">
+    <input type="checkbox">
+    <span class="slider round"></span>
+  </label>
+</switchChangeStyle>
 
 <script type="text/javascript" src="view/js/jquery.js" ></script>
 <script type="text/javascript" src="view/js/formCheckerProfile.js" ></script>

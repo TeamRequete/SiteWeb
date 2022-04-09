@@ -1,5 +1,8 @@
 listFormations {
     display: flex;
+    text-align: center;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 listFormations card {
