@@ -4,7 +4,7 @@ require_once("model/model.php");
 require_once("model/uploadfile.php");
 
 function index(){
-  $content = requireToVar("view/formation_lst.php");
+  $content = requireToVar("view/mainPage.php");
   buildTemplate($content);
 }
 
