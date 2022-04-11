@@ -294,6 +294,14 @@ function forumShow(){
   buildTemplate($content);
 }
 
+function switchStyle() {
+  if(!isset($_SESSION['style'])){
+    $_SESSION['style'] = true;
+  }else{
+    $_SESSION['style'] = !$_SESSION['style'];
+  }
+}
+
 function buildTemplate($content){
   $header_bar = requireToVar("view/select_bar.php");
   require("view/template.php");
