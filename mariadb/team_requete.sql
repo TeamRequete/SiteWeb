@@ -21,6 +21,7 @@ CREATE OR REPLACE TABLE formations(
   name varchar(255) not null,
   filename varchar(255) default '',
   content TEXT not null,
+  qcm TEXT default '',
   duration int not null,
   prof_id int not null,
   created_at time default current_timestamp,

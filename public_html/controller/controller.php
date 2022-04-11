@@ -4,7 +4,7 @@ require_once("model/model.php");
 require_once("model/uploadfile.php");
 
 function index(){
-  $content = requireToVar("view/mainPage.php");
+  $content = requireToVar("view/formation_lst.php");
   buildTemplate($content);
 }
 
@@ -169,9 +169,9 @@ function editFormation(){
 
   if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-    if (isset($_POST['name']) && isset($_POST['duration']) && isset($_POST['content']) && is_numeric($_POST['duration']) &&
+    if (isset($_POST['name']) && isset($_POST['duration']) && isset($_POST['content']) && isset($_POST['qcm']) && is_numeric($_POST['duration']) &&
     intval($_POST['duration'])>=0) {
-        updateUserFormation($_GET['id'], $_POST['name'], $_POST['duration'], $_POST['content']);
+        updateUserFormation($_GET['id'], $_POST['name'], $_POST['duration'], $_POST['content'], $_POST['qcm']);
         // photo de la formation
         if(isset($_FILES['imgFormation']) && $_FILES['imgFormation']['size']>0){ //un fichier est envoye
           $file_name = secure_save_file($_FILES['imgFormation']);

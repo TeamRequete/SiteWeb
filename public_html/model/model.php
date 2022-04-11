@@ -276,11 +276,11 @@ function updateFormation($formation_id, $name, $content, $duration) {
   $stmt->execute([$name, $content, $duration, $formation_id]);
 }
 
-function updateUserFormation($formation_id, $name, $duration, $content){
+function updateUserFormation($formation_id, $name, $duration, $content, $qcm){
   $pdo = dbConnect();
-  $sql = "UPDATE formations SET name=?, duration=?, content=? WHERE formation_id=?";
+  $sql = "UPDATE formations SET name=?, duration=?, content=?, qcm=? WHERE formation_id=?";
   $stmt = $pdo->prepare($sql);
-  $stmt->execute([$name, $duration, $content, $formation_id]);
+  $stmt->execute([$name, $duration, $content,$qcm, $formation_id]);
 }
 
 function updateFilenameFormation($formation_id, $fileName){

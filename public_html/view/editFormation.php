@@ -23,6 +23,9 @@ $stmt=getUserFormation($_SESSION['id'], $_GET['id'])->fetch();
     <label for="content">formation content (MarkDown)</label>
     <textarea id="story" name="content"
               rows="20" cols="50"><?php echo(htmlspecialchars($stmt['content'])); ?></textarea>
+    <label for="qcm">QCM format XML</label>
+    <textarea id="qcm" name="qcm"
+              rows="20" cols="50"><?php echo(htmlspecialchars($stmt['qcm'])); ?></textarea>
     <button type="submit" name="button">commit</button>
   </section>
 </form>
