@@ -8,9 +8,12 @@
 
   <?php if($result->rowCount() > 0): ?>
     <?php foreach($result as $row): ?>
-      <a href="<?php echo('/index.php?action=forumShow&id='.$_GET['id'].'&forumId='.$row['forum_id']) ?>">
-        <?php echo(htmlspecialchars($row['content'])) ?>
-      </a> 
+      <threads>
+        <a href="<?php echo('/index.php?action=forumShow&id='.$_GET['id'].'&forumId='.$row['forum_id']) ?>">
+          <?php echo(htmlspecialchars($row['content'])) ?>
+        </a> 
+        <button id="btnDeleteThread" onclick=""></button>
+      </threads>
     <?php endforeach; ?>
   <?php endif; ?>
 </tableForumLst>

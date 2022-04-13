@@ -119,6 +119,10 @@ header headerBar switchChangeStyle {
     margin-left: -20px;
 }
 
+switchChangeStyle {
+    margin-right: 10px;
+}
+
 switchChangeStyle input:checked+.slider {
     background-color: #962d21;
 }

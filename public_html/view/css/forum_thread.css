@@ -21,19 +21,38 @@ forumThread bulleDiscution:nth-of-type(2n-1) {
 
 forumThread bulleDiscution {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-bottom: 20px;
     padding: 20px;
 }
 
-forumThread bulleDiscution enTete {
+forumThread bulleDiscution bulleContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+forumThread bulleDiscution bulleContent enTete {
     padding-bottom: 10px;
     display: flex;
     flex-direction: column;
 }
 
-forumThread bulleDiscution enTete pseudo {
+forumThread bulleDiscution bulleContent enTete pseudo {
     font-size: 20px;
 }
 
-forumThread bulleDiscution content {}
+forumThread bulleDiscution #btnDeleteDiscution {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border-style: none;
+    background: url("../images/poubelle.png");
+    background-size: 100% 100%;
+}
+
+forumThread bulleDiscution #btnDeleteDiscution:hover {
+    cursor: pointer;
+}

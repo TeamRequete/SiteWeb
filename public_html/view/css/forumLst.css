@@ -9,13 +9,20 @@ tableForumLst {
     flex-direction: column;
     text-align: center;
     width: 60%;
+    background-color: #333333;
 }
 
 tableForumLst titleForumLst {
     font-size: 30px;
 }
 
-tableForumLst a {
+tableForumLst thread {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+tableForumLst threads a {
     width: 100%;
     text-decoration: none;
     padding: 5px 15px 5px 15px;
@@ -23,14 +30,30 @@ tableForumLst a {
     font-size: 25px;
 }
 
-tableForumLst a:hover {
-    background-color: rgba(0, 0, 0, 0.5)
+tableForumLst threads:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+
+tableForumLst threads #btnDeleteThread {
+    position: absolute;
+    right: 20%;
+    width: 25px;
+    height: 25px;
+    border-style: none;
+    background: url("../images/poubelle.png");
+    background-size: 100% 100%;
+}
+
+tableForumLst threads #btnDeleteThread:hover {
+    cursor: pointer;
 }
 
 #createForumThread {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #333333;
 }
 
 #createForumThread formCreateThread {

@@ -8,13 +8,16 @@
       <?php foreach($result as $row): ?>
         
       <bulleDiscution>
-          <enTete>
-              <pseudo><?php echo(htmlspecialchars(getUserLogin($row['user_id']))) ?></pseudo>
-              <date><?php echo(htmlspecialchars($row['created_at'])) ?></date>
-          </enTete>
-          <content>
-              <?php echo(htmlspecialchars($row['content'])) ?>
-          </content>
+          <bulleContent>
+            <enTete>
+                <pseudo><?php echo(htmlspecialchars(getUserLogin($row['user_id']))) ?></pseudo>
+                <date><?php echo(htmlspecialchars($row['created_at'])) ?></date>
+            </enTete>
+            <content>
+                <?php echo(htmlspecialchars($row['content'])) ?>
+            </content>
+          </bulleContent>
+          <button id="btnDeleteDiscution" onclick=""></button>
       </bulleDiscution>
 
       <?php endforeach; ?>
