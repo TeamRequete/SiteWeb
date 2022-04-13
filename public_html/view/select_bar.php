@@ -1,15 +1,11 @@
-<?php ?>
 <!-- bouton menu 2 -->
   <openMenu>
     <a href="javascript:void(0)" class="openbtn" onclick="openNav()">&#9776;</a>
   </openMenu>
-<?php ?>
 
 <headerBar id="headerBar">
-  <?php?>
   <!-- bouton menu 2 -->
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <?php?>  
 
   <a href="index.php">
     <h2>Team Requête</h2>
@@ -39,6 +35,17 @@
       <a href="index.php?action=deconnexion">Deconnexion</a>
     <?php endif; ?>
   </connect>
+
+  <switchChangeStyle>
+    <label class="switch">
+      <?php if(isset($_SESSION['style']) && $_SESSION['style'] === true): ?>
+        <input onclick="switchStyle();" type="checkbox" checked>
+      <?php else: ?>
+        <input onclick="switchStyle();" type="checkbox">
+      <?php endif; ?>
+      <span class="slider round"></span>
+    </label>
+  </switchChangeStyle>
 </headerBar>
 
 

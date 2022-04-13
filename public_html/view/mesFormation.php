@@ -22,7 +22,9 @@
   </listFormations>
   <?php endif; ?>
 
-  <hr id="lineSeparator">
+  <?php if(dumpFollowFormation($_SESSION['id'])->rowCount() !== 0): ?>
+    <hr id="lineSeparator">
+  <?php endif; ?>
 
   <mesFormationsCreees>
     <h1>Mes formations créées</h1>

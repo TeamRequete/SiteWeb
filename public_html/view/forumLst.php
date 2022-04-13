@@ -12,4 +12,6 @@
     <?php endforeach; ?>
 
 </tableForumLst>
+<?php else:?>
+    <h1>Veuillez suivre une formation pour afficher son forum</h1>
 <?php endif; ?>

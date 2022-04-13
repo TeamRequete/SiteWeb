@@ -17,17 +17,7 @@
 </head>
 
 <body>
-  <switchChangeStyle>
-    <h3>Changer style site</h3>
-    <label class="switch">
-      <?php if(isset($_SESSION['style']) && $_SESSION['style'] === true): ?>
-        <input onclick="switchStyle();" type="checkbox" checked>
-      <?php else: ?>
-        <input onclick="switchStyle();" type="checkbox">
-      <?php endif; ?>
-      <span class="slider round"></span>
-    </label>
-  </switchChangeStyle>
+  
     <header>
       <?php echo "$header_bar" ?>
     </header>

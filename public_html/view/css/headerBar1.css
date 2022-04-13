@@ -16,6 +16,14 @@ header headerBar {
     color: white;
 }
 
+header .openbtn {
+    display: none;
+}
+
+header headerBar .closebtn {
+    display: none;
+}
+
 header headerBar h2 {
     text-transform: uppercase;
     margin-left: 35px;
@@ -105,4 +113,16 @@ header headerBar button {
 header headerBar button:hover {
     background-color: #d49625;
     transition-duration: 0.5s;
+}
+
+header headerBar switchChangeStyle {
+    margin-left: -20px;
+}
+
+switchChangeStyle input:checked+.slider {
+    background-color: #962d21;
+}
+
+switchChangeStyle input:focus+.slider {
+    box-shadow: 0 0 1px #962d21;
 }
