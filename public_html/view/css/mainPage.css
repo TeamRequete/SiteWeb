@@ -57,6 +57,11 @@ mainPage contentTopPage contentPresentation buttonsContent button {
     width: 25px;
     height: 25px;
     border-radius: 10px;
+    border-style: none;
+}
+
+mainPage contentTopPage contentPresentation buttonsContent button:hover {
+    cursor: pointer;
 }
 
 mainPage contentTopPage contentPresentation buttonsContent #btnBefore {
