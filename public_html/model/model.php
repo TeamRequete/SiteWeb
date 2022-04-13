@@ -56,9 +56,7 @@ function checkUserExist($user_email){
   $sql = "SELECT COUNT(*) FROM users where user_email=?";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$user_email]);
-  foreach ($stmt as $row) { //TODO goto ligne 54
-    $ret = intval($row[0]);
-  }
+  $ret = intval($stmt->fetch()[0]);
   if($ret === 0){
     return false;
   }
@@ -218,9 +216,8 @@ function checkUserId($user_id){
   $sql = "SELECT COUNT(*) FROM users where ID=?";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$user_id]);
-  foreach ($stmt as $row) {
-    $size = intval($row[0]);
-  }
+  $size = intval($stmt->fetch()[0]);
+
   if($size === 1){
     return true;
   }
@@ -364,7 +361,12 @@ function deleteFormationUser($user_id, $formation_id){
   $stmt->execute([$formation_id, $user_id]);
 }
 
-
+function deleteUser($user_id){
+  $pdo = dbConnect();
+  $sql = "DELETE FROM users WHERE ID=?";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([$user_id]);
+}
 
 
 function deconnexion(){

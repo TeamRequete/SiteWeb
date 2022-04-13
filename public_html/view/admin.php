@@ -9,6 +9,7 @@
         <th>role</th>
         <th>created_at</th>
         <th>promote</th>
+        <th>delete</th>
         <th>reset password</th>
         <th>new password</th>
     </tr>
@@ -24,6 +25,7 @@
         <th><?php echo($row['role']); ?></th>
         <th><?php echo($row['created_at']); ?></th>
         <th> <button form="<?php echo('form_promote'.$row['ID']); ?>" type="promote" name="promote" value="<?php echo($row['ID']); ?>" submit>promote</button> </th>
+        <th> <button form="<?php echo('form_promote'.$row['ID']); ?>" type="delete" name="delete" value="<?php echo($row['ID']); ?>" submit>delete</button> </th>
         <th> <button disabled class="b_newpass" form="<?php echo('form_newpass'.$row['ID']); ?>" type="update" name="b_newpass" value="<?php echo($row['ID']); ?>" submit>update</button> </th>
         <th> <input class="newpass" type="password"  form="<?php echo('form_newpass'.$row['ID']); ?>" type="text" name="new_pass" value=""> </th>
       </tr>

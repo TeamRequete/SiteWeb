@@ -131,6 +131,13 @@ function admin(){
       }else{
         $error = "WTF";
       }
+    }elseif(isset($_POST['delete']) && checkUserId($_POST['delete'])){
+      if(strval($_SESSION['id']) === $_POST['delete']){
+        $error = "Auto suppresion interdit";
+      }else{
+        die();
+        deleteUser($_POST['delete']);
+      }
     }
   }
 
