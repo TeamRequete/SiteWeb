@@ -31,5 +31,30 @@
   </tbody>
 </table>
 
+<h1>Formations</h1>
+
+<table>
+  <thead>
+    <tr>
+        <th>Image</th>
+        <th>Nom</th>
+        <th>Durée</th>
+        <th>Date</th>
+        <th>Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php foreach(dumpFormation() as $row): ?>
+      <tr>
+        <th> <img src="<?php if($row["filename"] !== '') echo("/uploads/".htmlspecialchars($row["filename"])); else echo("/uploads/default.jpg"); ?>" alt=""> </th>
+        <th><?php echo(htmlspecialchars($row["name"])); ?></th>
+        <th><?php echo(htmlspecialchars($row["duration"])); ?></th>
+        <th><?php echo(htmlspecialchars($row["created_at"])); ?></th>
+        <th><a href="<?php echo("index.php?action=editFormation&id=".$row["formation_id"]); ?>"><button>Edit</button></a> </th>
+      </tr>
+    <?php endforeach; ?>
+  </tbody>
+</table>
+
 <script type="text/javascript" src="view/js/jquery.js" ></script>
 <script type="text/javascript" src="view/js/formCheckerAdmin.js" ></script>

@@ -162,7 +162,7 @@ function notNeedSession(){
 }
 
 function editFormation(){
-  if(isset($_GET['id']) === false || getUserFormation($_SESSION['id'], $_GET['id'])->rowCount()  ==  0){ //check if user is profesor
+  if(checkUserAdmin($_SESSION['id']) == false &&(isset($_GET['id']) === false || getUserFormation($_SESSION['id'], $_GET['id'])->rowCount()  ==  0)){ //check if user is profesor or admin
     header("Location: /index.php");
     die();
   }

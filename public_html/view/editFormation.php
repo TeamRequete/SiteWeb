@@ -3,7 +3,7 @@
 <link href="view/css/editFormation.css" rel="stylesheet" type="text/css">
 
 <?php
-$stmt=getUserFormation($_SESSION['id'], $_GET['id'])->fetch();
+$stmt=getFormation($_GET['id'])->fetch();
 ?>
 
 
