@@ -2,6 +2,7 @@ forumThread {
     display: flex;
     flex-direction: column;
     margin: 30px 100px 30px 100px;
+    width: 80%;
 }
 
 forumThread titre {
@@ -29,6 +30,8 @@ forumThread bulleDiscution {
 forumThread bulleDiscution bulleContent {
     display: flex;
     flex-direction: column;
+    word-break: break-all;
+    overflow-x: hidden;
     width: 100%;
     margin-bottom: 20px;
     padding: 20px;
