@@ -1,7 +1,6 @@
 <?php
 session_start();
-require_once("model/model.php");
-require_once("model/uploadfile.php");
+require_once("model/model_includer.php");
 
 function index(){
   $content = requireToVar("view/mainPage.php");
