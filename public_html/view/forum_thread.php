@@ -6,7 +6,7 @@
   <forumThread>
       <titre><?php echo(htmlspecialchars(getForum($_GET['id'], $_GET['forumId'])['content'])); ?></titre>
       <?php foreach($result as $row): ?>
-        
+
       <bulleDiscution>
           <bulleContent>
             <enTete>
@@ -17,7 +17,9 @@
                 <?php echo(htmlspecialchars($row['content'])) ?>
             </content>
           </bulleContent>
-          <button id="btnDeleteDiscution" onclick=""></button>
+          <?php if($row['user_id'] === strval($_SESSION['id'])): ?>
+            <a href='<?php echo("/index.php?action=forumShow&id=".$_GET['id']."&forumId=".$_GET['forumId']."&threadId=".$row['thread_id']."&delete=true"); ?>'><button id="btnDeleteDiscution" onclick=""></button></a>
+          <?php endif; ?>
       </bulleDiscution>
 
       <?php endforeach; ?>

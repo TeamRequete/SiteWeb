@@ -11,8 +11,10 @@
       <threads>
         <a href="<?php echo('/index.php?action=forumShow&id='.$_GET['id'].'&forumId='.$row['forum_id']) ?>">
           <?php echo(htmlspecialchars($row['content'])) ?>
-        </a> 
-        <button id="btnDeleteThread" onclick=""></button>
+        </a>
+        <?php if($row['user_id'] === strval($_SESSION['id'])): ?>
+          <a href="<?php echo('/index.php?action=forumShow&id='.$_GET['id'].'&forumId='.$row['forum_id'].'&delete=true') ?>"><button id="btnDeleteThread" onclick=""></button></a>
+        <?php endif; ?>
       </threads>
     <?php endforeach; ?>
   <?php endif; ?>

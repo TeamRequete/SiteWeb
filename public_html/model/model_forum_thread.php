@@ -8,6 +8,14 @@ function insertForumThread($user_id, $forum_id,$content){
   $stmt->execute([$forum_id, $user_id, $content]);
 }
 
+//delete
+function deleteForumThread($user_id, $thread_id){
+  $pdo = dbConnect();
+  $sql = "DELETE FROM forum_thread WHERE thread_id=? AND user_id=?";
+  $stmt= $pdo->prepare($sql);
+  $stmt->execute([$thread_id, $user_id]);
+}
+
 // dump
 function dumpForumThread($forum_id){
   $pdo = dbConnect();
