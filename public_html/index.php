@@ -7,7 +7,6 @@ $page_whitelist = ["register","login","deconnexion","profile","admin",
                   "forumThread","forumLst","forumShow","switchStyle"];
 
 try {
-    checkSession();
     if(isset($_GET['action'])){
       if (!in_array($_GET['action'], $page_whitelist)) {
         echo "NOP";
