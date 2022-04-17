@@ -30,11 +30,11 @@ function getForum($formation_id, $forum_id){
 }
 
 //delete
-function deleteForum($user_id, $formation_id){
+function deleteForum($user_id, $forum_id){
   $pdo = dbConnect();
-  $sql = "DELETE FROM forum WHERE formation_id=? AND user_id=?";
+  $sql = "DELETE FROM forum WHERE forum_id=? AND user_id=?";
   $stmt= $pdo->prepare($sql);
-  $stmt->execute([$formation_id, $user_id]);
+  $stmt->execute([$forum_id, $user_id]);
 }
 
 // dump
