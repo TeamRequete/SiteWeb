@@ -96,4 +96,12 @@ function dumpUserFormation($user_id){
   return $stmt;
 }
 
+function dumpMostLikedFormation(){
+  $pdo = dbConnect();
+  $sql = "SELECT formations.formation_id, formations.name, formations.filename , SUM(vote) AS upvote FROM formations JOIN formations_user ON formations_user.formation_id=formations.formation_id GROUP BY formation_id ORDER BY upvote DESC LIMIT 6";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute();
+  return $stmt;
+}
+
 ?>
