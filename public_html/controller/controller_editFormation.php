@@ -5,6 +5,15 @@ function editFormation(){
     header("Location: /index.php");
     die();
   }
+  if(isset($_GET['delete'])){
+    deleteFormation($_GET['id']);
+    if(isset($_SERVER['HTTP_REFERER'])){
+      header("Location: ".$_SERVER['HTTP_REFERER']);
+    }else{
+      header("Location: /index.php");
+    }
+    die();
+  }
 
   if($_SERVER['REQUEST_METHOD'] === 'POST'){
 

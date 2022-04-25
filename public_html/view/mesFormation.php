@@ -17,7 +17,7 @@
             </cardTitle>
         </a>
       </card>
-        
+
     <?php endforeach; ?>
   </listFormations>
   <?php endif; ?>
@@ -30,7 +30,7 @@
     <h1>Mes formations créées</h1>
 
     <!-- formation crée -->
-    
+
       <?php $result=dumpUserFormation($_SESSION["id"]); ?>
       <?php if($result->rowCount() > 0): ?>
       <table>
@@ -42,6 +42,7 @@
               <th>Nombre de Follow</th>
               <th>Nombre de upvote</th>
               <th>Edit</th>
+              <th>Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -53,6 +54,7 @@
               <th><?php echo(getFollowFormation($row["formation_id"])); ?></th>
               <th><?php echo(getVoteFormation($row["formation_id"])); ?></th>
               <th><a href="<?php echo("index.php?action=editFormation&id=".$row["formation_id"]); ?>"><button type="submit" value="<?php echo($row['formation_id']); ?>">edit</button></a> </th>
+              <th><a href="<?php echo("index.php?action=editFormation&id=".$row["formation_id"]."&delete=true"); ?>"><button type="submit" value="<?php echo($row['formation_id']); ?>">delete</button></a> </th>
             </tr>
           <?php endforeach; ?>
         </tbody>

@@ -79,6 +79,13 @@ function deleteFilenameFormation($formation_id){
   $stmt->execute([$formation_id]);
 }
 
+function deleteFormation($formation_id){
+  $pdo = dbConnect();
+  $sql = "DELETE FROM formations where formation_id=?";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([$formation_id]);
+}
+
 // dump
 function dumpFormation(){
   $pdo = dbConnect();

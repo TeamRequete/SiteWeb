@@ -43,6 +43,7 @@
         <th>Durée</th>
         <th>Date</th>
         <th>Edit</th>
+        <th>delete</th>
     </tr>
   </thead>
   <tbody>
@@ -53,6 +54,7 @@
         <th><?php echo(htmlspecialchars($row["duration"])); ?></th>
         <th><?php echo(htmlspecialchars($row["created_at"])); ?></th>
         <th><a href="<?php echo("index.php?action=editFormation&id=".$row["formation_id"]); ?>"><button>Edit</button></a> </th>
+        <th><a href="<?php echo("index.php?action=editFormation&id=".$row["formation_id"]."&delete=true"); ?>"><button>Delete</button></a></th>
       </tr>
     <?php endforeach; ?>
   </tbody>
