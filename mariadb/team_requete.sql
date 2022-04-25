@@ -24,7 +24,7 @@ CREATE OR REPLACE TABLE formations(
   qcm TEXT default '',
   duration int not null,
   prof_id int not null,
-  created_at time default current_timestamp,
+  created_at timestamp default current_timestamp,
   primary key(formation_id)
 );
 

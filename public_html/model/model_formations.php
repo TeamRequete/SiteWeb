@@ -15,9 +15,9 @@ function checkFormationExist($formation_id){
 // insert
 function insertFormation($user_id,$name) {
   $pdo = dbConnect();
-  $sql = "INSERT INTO formations (name,prof_id,content,duration) VALUES (?,?,'',0)";
+  $sql = "INSERT INTO formations (name,prof_id,content,duration) VALUES (?,?,'',0);INSERT INTO formations_user (user_id,formation_id) VALUES (?, LAST_INSERT_ID())";
   $stmt= $pdo->prepare($sql);
-  $stmt->execute([$name,$user_id]);
+  $stmt->execute([$name,$user_id, $user_id]);
 }
 
 // select
@@ -82,7 +82,7 @@ function deleteFilenameFormation($formation_id){
 // dump
 function dumpFormation(){
   $pdo = dbConnect();
-  $sql = "SELECT * FROM formations";
+  $sql = "SELECT * FROM formations order by created_at desc";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([]);
   return $stmt;
@@ -90,7 +90,7 @@ function dumpFormation(){
 
 function dumpUserFormation($user_id){
   $pdo = dbConnect();
-  $sql = "SELECT * FROM formations WHERE prof_id=?";
+  $sql = "SELECT * FROM formations WHERE prof_id=? order by created_at desc";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$user_id]);
   return $stmt;
