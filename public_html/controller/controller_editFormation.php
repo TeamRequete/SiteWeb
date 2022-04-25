@@ -12,10 +12,15 @@ function editFormation(){
     intval($_POST['duration'])>=0) {
         updateUserFormation($_GET['id'], $_POST['name'], $_POST['duration'], $_POST['content'], $_POST['qcm']);
         // photo de la formation
-        if(isset($_FILES['imgFormation']) && $_FILES['imgFormation']['size']>0){ //un fichier est envoye
-          $file_name = secure_save_file($_FILES['imgFormation']);
-          deleteFilenameFormation($_GET['id']);
-          updateFilenameFormation($_GET['id'], $file_name);
+        if(isset($_FILES['imgFormation'])){ //un fichier est envoye
+          if($_FILES['imgFormation']['size']>0){
+            $file_name = secure_save_file($_FILES['imgFormation']);
+            deleteFilenameFormation($_GET['id']);
+            updateFilenameFormation($_GET['id'], $file_name);
+          }else{
+            die("Fichier trop volumineux il faut un fichier de moins de 2MO");
+          }
+
         }
 
     }else{
