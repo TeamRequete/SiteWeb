@@ -12,7 +12,7 @@ $xml = simplexml_load_string($stmt['qcm']);
           $magie = xmlFlush($curr);
     ?>
     <fieldset>
-    <label> <?php echo(htmlentities($curr->problem[0])); ?> </label><br>
+    <legend> <?php echo(htmlentities($curr->problem[0])); ?> </legend><br>
     <?php for($d=0;$d<(count($magie));$d++): ?>
       <div>
           <input type="checkbox" id="<?php echo($d); ?>" name="<?php echo(strval($i)."|".strval($d)); ?>" value="<?php echo(htmlentities($magie[$d])) ?>">

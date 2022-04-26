@@ -10,7 +10,7 @@ $xml = simplexml_load_string($stmt['qcm']);
   <?php for($i=0;$i< count($xml->questions->question);$i++): ?>
     <?php $curr = $xml->questions->question[$i];?>
     <fieldset>
-    <label> <?php echo(htmlentities($curr->problem[0])); ?> </label><br>
+    <legend> <?php echo(htmlentities($curr->problem[0])); ?> </legend><br>
     <?php for($d=0;$d<(count($curr->proposes->proposetrue));$d++): ?>
       <div>
           <input type="checkbox" id="<?php echo($d); ?>" name="<?php echo(strval($i)."|".strval($d)); ?>" value="<?php echo(htmlentities($curr->proposes->proposetrue[$d])) ?>" checked>
