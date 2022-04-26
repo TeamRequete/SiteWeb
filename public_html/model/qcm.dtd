@@ -1,0 +1,9 @@
+<!DOCTYPE qcm[
+    <!ELEMENT qcm (questions)>
+    <!ELEMENT questions (question)+>
+    <!ELEMENT question (problem,proposes)>
+    <!ELEMENT problem (#PCDATA)>
+    <!ELEMENT proposes (propose | proposetrue)+>
+    <!ELEMENT propose (#PCDATA)>
+    <!ELEMENT proposetrue (#PCDATA)>
+]>

@@ -37,4 +37,8 @@ function buildMarkdown($content){
   return $Parsedown->text($content);
 }
 
+function buildQcm($xml){
+  
+}
+
 ?>

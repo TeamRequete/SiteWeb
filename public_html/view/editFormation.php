@@ -38,3 +38,9 @@ $stmt=getFormation($_GET['id'])->fetch();
 <section id="preview">
   <?php echo(buildMarkdown($stmt['content'])) ?>
 </section>
+
+<h1>QCM</h1>
+<br/>
+<section id="preview">
+  <?php echo(buildMarkdown($stmt['content'])) ?>
+</section>
