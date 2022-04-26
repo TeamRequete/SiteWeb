@@ -42,5 +42,15 @@ $stmt=getFormation($_GET['id'])->fetch();
 <h1>QCM</h1>
 <br/>
 <section id="preview">
-  <?php echo(buildMarkdown($stmt['content'])) ?>
+  <?php
+    echo(requireToVar("view/qcm.php"));
+  ?>
+</section>
+
+<h1>Correction</h1>
+<br/>
+<section id="preview">
+  <?php
+    echo(requireToVar("view/qcm_cor.php"));
+  ?>
 </section>

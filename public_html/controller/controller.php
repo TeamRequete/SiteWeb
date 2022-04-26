@@ -1,5 +1,6 @@
 <?php
 session_start();
+libxml_use_internal_errors(true);
 require_once("controller/controller_admin.php");
 require_once("controller/controller_editFormation.php");
 require_once("controller/controller_followFormation.php");

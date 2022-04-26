@@ -37,8 +37,16 @@ function buildMarkdown($content){
   return $Parsedown->text($content);
 }
 
-function buildQcm($xml){
-  
+function xmlFlush($xml){
+  $stack=array();
+  for($i=0;$i<count($xml->proposes->propose);$i++){
+    array_push($stack, $xml->proposes->propose[$i]);
+  }
+  for($i=0;$i<count($xml->proposes->proposetrue);$i++){
+    array_push($stack, $xml->proposes->proposetrue[$i]);
+  }
+  shuffle($stack);
+  return $stack;
 }
 
 ?>

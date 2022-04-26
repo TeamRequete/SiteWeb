@@ -19,7 +19,6 @@ function editFormation(){
 
     if (isset($_POST['name']) && isset($_POST['duration']) && isset($_POST['content']) && isset($_POST['qcm']) && is_numeric($_POST['duration']) &&
     intval($_POST['duration'])>=0) {
-        libxml_use_internal_errors(true);
         $xml = simplexml_load_string($_POST['qcm']);
         if (!$xml) {
           $_POST['qcm'] = '';

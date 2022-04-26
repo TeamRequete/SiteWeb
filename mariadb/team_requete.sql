@@ -33,6 +33,7 @@ CREATE OR REPLACE TABLE formations_user(
   user_id int not null,
   formation_id int not null,
   vote TINYINT(1) default 0,
+  qcm_result TEXT default '',
   primary key (user_id, formation_id),
   constraint fk_user
     foreign key (user_id) references users(ID) ON DELETE CASCADE,

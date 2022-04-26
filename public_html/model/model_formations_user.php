@@ -46,9 +46,7 @@ function getFollowFormation($formation_id){
   $sql = "SELECT COUNT(*) FROM formations_user where formation_id=?";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$formation_id]);
-  $size = intval($stmt->fetch(
-
-)[0]);
+  $size = intval($stmt->fetch()[0]);
   return $size;
 }
 
@@ -57,10 +55,23 @@ function getVoteFormation($formation_id){
   $sql = "SELECT COUNT(*) FROM formations_user where formation_id=? AND vote=1";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$formation_id]);
-  foreach ($stmt as $row) { // TODO je sais je sais
-    $size = intval($row[0]);
-  }
-  return $size;
+  return intval($stmt->fetch()[0]);
+}
+
+function getFormationUserQcm($user_id, $formation_id){
+  $pdo = dbConnect();
+  $sql = "SELECT qcm_result FROM formations_user where formation_id=? AND user_id=?";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([$formation_id, $user_id]);
+  return $stmt->fetch()[0];
+}
+
+//update
+function updateFormationUserQcm($user_id, $formation_id, $ret) {
+  $pdo = dbConnect();
+  $sql = "UPDATE formations_user SET qcm_result=? WHERE formation_id=? AND user_id=?";
+  $stmt= $pdo->prepare($sql);
+  $stmt->execute([$ret, $formation_id, $user_id]);
 }
 
 // delete

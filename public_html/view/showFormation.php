@@ -11,6 +11,22 @@
 <br>
 <showFormation><?php echo(buildMarkdown($stmt['content'])); ?></showFormation>
 
+<br/>
+<?php $ret = getFormationUserQcm($_SESSION['id'], $_GET['id']);?>
+<?php if($ret===''): ?>
+<h1>QCM</h1>
+<?php else: ?>
+  <h1>QCM <?php echo("Score: ".$ret); ?></h1>
+<?php endif; ?>
+<section>
+  <?php
+    echo(requireToVar("view/qcm.php"));
+  ?>
+</section>
+
+<br/>
+<br/>
+
 <?php if(checkUserFormation($_SESSION['id'], $_GET['id'])): ?>
   <?php if(checkUpVote($_SESSION['id'], $_GET['id'])): ?>
     <a href="<?php echo("index.php?action=upvoteFormation&id=".$stmt["formation_id"]); ?>"><button type="submit" value="<?php echo($row['formation_id']); ?>">DownVote</button></a>
