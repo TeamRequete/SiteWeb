@@ -1,4 +1,4 @@
 /mariadb/mariadb_data/*
-/public_html/uploads/*
-!/public_html/uploads/default.jpg
+/public_html/webroot/uploads/*
+!/public_html/webroot/uploads/default.jpg
 /rapport.md

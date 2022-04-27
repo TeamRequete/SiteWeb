@@ -51,6 +51,6 @@ $stmt=getFormation($_GET['id'])->fetch();
 <br/>
 <section id="preview">
   <?php
-    echo(requireToVar("../view/qcm_cor.php"));
+    echo(requireToVar("view/qcm_cor.php"));
   ?>
 </section>

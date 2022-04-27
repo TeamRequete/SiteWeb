@@ -63,7 +63,11 @@ function getFormationUserQcm($user_id, $formation_id){
   $sql = "SELECT qcm_result FROM formations_user where formation_id=? AND user_id=?";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$formation_id, $user_id]);
-  return $stmt->fetch()[0];
+  $ret = $stmt->fetch();
+  if($ret){
+    return $ret[0];
+  }
+  return '';
 }
 
 //update
