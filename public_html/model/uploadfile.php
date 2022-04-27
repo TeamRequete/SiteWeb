@@ -22,7 +22,7 @@ function secure_save_file($file){
     die("File not allowed.");
   }
   $fileName = sha1(rand()) ."." . $allowedTypes[$fileType];
-  $newFilePath = __DIR__."/../uploads/". $fileName;
+  $newFilePath = __DIR__."/../webroot/uploads/". $fileName;
   move_uploaded_file($filePath, $newFilePath);
   return $fileName;
 }
