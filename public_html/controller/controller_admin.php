@@ -32,7 +32,6 @@ function admin(){
       if(strval($_SESSION['id']) === $_POST['delete']){
         $error = "Auto suppresion interdit";
       }else{
-        die();
         deleteUser($_POST['delete']);
       }
     }
