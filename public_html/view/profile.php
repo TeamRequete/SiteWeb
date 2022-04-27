@@ -12,13 +12,13 @@
     <h1>Profile</h1>
 
     <label>Adresse mail</label>
-    <input type="email" name="email" value="<?php echo($email); ?>" required/> <br>
+    <input type="email" name="email" value="<?php echo(htmlentities($email)); ?>" required/> <br>
 
     <label>Vérifier adresse mail</label>
-    <input type="email" value="<?php echo($email); ?>" required/> <br>
+    <input type="email" value="<?php echo(htmlentities($email)); ?>" required/> <br>
 
     <label>Username</label>
-    <input type="text" name="username" placeholder="UserName" value="<?php echo($login); ?>" required/><br>
+    <input type="text" name="username" placeholder="UserName" value="<?php echo(htmlentities($login)); ?>" required/><br>
 
     <label>Mot de passe actuelle</label>
     <input type="password" name="last_pass" required/><br>
