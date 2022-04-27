@@ -7,6 +7,10 @@ $page_whitelist = ["register","login","deconnexion","profile","admin",
                   "forumThread","forumLst","forumShow","switchStyle"];
 
 try {
+    if((isset($_GET['id']) && !is_numeric($_GET['id'])) || (isset($_GET['formation_id']) && !is_numeric($_GET['formation_id'])) || (isset($_GET['forumId']) && !is_numeric($_GET['forumId']))){
+      header("Location: /");
+      die();
+    }
     if(isset($_GET['action'])){
       if (!in_array($_GET['action'], $page_whitelist)) {
         echo "NOP";
