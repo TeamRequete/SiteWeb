@@ -18,10 +18,9 @@ function checkUserAdmin($user_id){
   $sql = "SELECT role FROM users where ID=?";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$user_id]);
-  foreach ($stmt as $row) {
-    $role = $row[0];
-  }
-  if($role === "Admin"){
+  $ret = $stmt->fetch();
+
+  if($ret && $ret[0] === "Admin"){
     return true;
   }
   return false;
