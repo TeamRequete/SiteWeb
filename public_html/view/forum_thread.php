@@ -14,7 +14,7 @@
                 <date><?php echo(htmlspecialchars($row['created_at'])) ?></date>
             </enTete>
             <content>
-                <?php echo(htmlspecialchars($row['content'])) ?>
+                <?php echo(buildMarkdown($row['content'])) ?>
             </content>
           </bulleContent>
           <?php if($row['user_id'] === strval($_SESSION['id'])): ?>
