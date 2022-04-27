@@ -6,7 +6,7 @@
 <?php $stmt=getFormation($_GET['id'])->fetch(); ?>
 
 <h1><?php echo(htmlspecialchars($stmt['name'])); ?></h1>
-<h2>La formation dure: <?php echo(htmlspecialchars($stmt['duration'])); ?></h2>
+<h2>La formation dure: <?php echo(htmlspecialchars($stmt['duration'])); ?> H </h2>
 <br>
 <br>
 <showFormation><?php echo(buildMarkdown($stmt['content'])); ?></showFormation>
