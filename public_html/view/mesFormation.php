@@ -1,5 +1,5 @@
 <!-- a changer -->
-<link href="view/css/mesFormations.css" rel="stylesheet" type="text/css">
+<link href="css/mesFormations.css" rel="stylesheet" type="text/css">
 
 <mesFormations>
 

@@ -1,4 +1,3 @@
-
 <?php
 $stmt = getFormation($_GET['id'])->fetch();
 $xml = simplexml_load_string($stmt['qcm']);

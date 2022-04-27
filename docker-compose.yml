@@ -23,14 +23,12 @@ services:
       - frontend
       - backend
     ports:
-      - "80:80"
+      - "127.0.0.1:9657:80"
     volumes:
       - ${PROJECT_ROOT}/:/var/www/html/
     container_name: apache
   mysql:
     image: mariadb
-    ports:
-      - "3306:3306"
     volumes:
             - ./mariadb/mariadb_data:/var/lib/mysql
             - ./mariadb/team_requete.sql:/docker-entrypoint-initdb.d/team_requete.sql:ro

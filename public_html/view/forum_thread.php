@@ -1,4 +1,4 @@
-<link href="view/css/forum_thread.css" rel="stylesheet" type="text/css">
+<link href="css/forum_thread.css" rel="stylesheet" type="text/css">
 
 <?php $result=dumpForumThread($_GET['forumId']) ?>
 <?php if($result->rowCount()>0): ?>

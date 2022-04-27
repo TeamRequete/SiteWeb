@@ -1,5 +1,5 @@
 <?php
-require_once('./controller/controller.php');
+require_once('../controller/controller.php');
 
 $page_whitelist = ["register","login","deconnexion","profile","admin",
                   "editFormation","mesFormation","formations","showFormation",

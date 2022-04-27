@@ -2,12 +2,12 @@
 
 function buildTemplate($content){
   $header_bar = requireToVar("view/select_bar.php");
-  require("view/template.php");
+  require("../view/template.php");
 }
 
 function requireToVar($file_name){
   ob_start();
-  require($file_name);
+  require("../".$file_name);
   return ob_get_clean();
 }
 
@@ -31,7 +31,7 @@ function notNeedSession(){
 }
 
 function buildMarkdown($content){
-  require_once("libs/Parsedown.php");
+  require_once("../libs/Parsedown.php");
   $Parsedown = new Parsedown();
   $Parsedown->setSafeMode(true); // miam miam
   return $Parsedown->text($content);

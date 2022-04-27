@@ -1,11 +1,11 @@
-<link href="view/css/mainPage.css" rel="stylesheet" type="text/css">
+<link href="css/mainPage.css" rel="stylesheet" type="text/css">
 
 
 
 <mainPage>
     <contentTopPage>
         <textImageCenter>Site de formations de la Team Requête</textImageCenter>
-        <img src="view/images/im.jpg" alt="imgTeamRequete"></img>
+        <img src="images/im.jpg" alt="imgTeamRequete"></img>
         <contentPresentation>
             <contents>
                 <div class="content div1">A remplir avec du texte <br> balise 1</div>
@@ -52,5 +52,5 @@
 
 
 
-<script src="view/js/jquery.js"></script>
-<script src="view/js/presentationButtonsAnimations.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/presentationButtonsAnimations.js"></script>

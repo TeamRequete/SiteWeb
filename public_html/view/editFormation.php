@@ -1,6 +1,6 @@
 <!-- a changer -->
-<link href="view/css/admin.css" rel="stylesheet" type="text/css">
-<link href="view/css/editFormation.css" rel="stylesheet" type="text/css">
+<link href="css/admin.css" rel="stylesheet" type="text/css">
+<link href="css/editFormation.css" rel="stylesheet" type="text/css">
 
 <?php
 $stmt=getFormation($_GET['id'])->fetch();
@@ -51,6 +51,6 @@ $stmt=getFormation($_GET['id'])->fetch();
 <br/>
 <section id="preview">
   <?php
-    echo(requireToVar("view/qcm_cor.php"));
+    echo(requireToVar("../view/qcm_cor.php"));
   ?>
 </section>

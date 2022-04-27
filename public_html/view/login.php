@@ -1,4 +1,4 @@
-<link href="view/css/login.css" rel="stylesheet" type="text/css">
+<link href="css/login.css" rel="stylesheet" type="text/css">
 
 <form method="post" action="index.php?action=login">
     <h1>Connexion</h1>

@@ -1,5 +1,5 @@
 <!-- a changer -->
-<link href="view/css/admin.css" rel="stylesheet" type="text/css">
+<link href="css/admin.css" rel="stylesheet" type="text/css">
 
 <!-- toutes les formations du site -->
 <?php $result=dumpFormation(); ?>

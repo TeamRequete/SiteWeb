@@ -1,4 +1,4 @@
-<link href="view/css/profile.css" rel="stylesheet" type="text/css">
+<link href="css/profile.css" rel="stylesheet" type="text/css">
 
 
 <?php
@@ -33,5 +33,5 @@
 </form>
 
 
-<script type="text/javascript" src="view/js/jquery.js" ></script>
-<script type="text/javascript" src="view/js/formCheckerProfile.js" ></script>
+<script type="text/javascript" src="js/jquery.js" ></script>
+<script type="text/javascript" src="js/formCheckerProfile.js" ></script>

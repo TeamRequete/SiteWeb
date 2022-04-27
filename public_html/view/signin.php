@@ -1,4 +1,4 @@
-<link href="view/css/signin.css" rel="stylesheet" type="text/css">
+<link href="css/signin.css" rel="stylesheet" type="text/css">
 
 
 <form id="formRegister" action="index.php?action=register" method="post">
@@ -23,5 +23,5 @@
     <button type="submit" hidden>S'inscrire</button>
 </form>
 
-<script type="text/javascript" src="view/js/jquery.js" ></script>
-<script type="text/javascript" src="view/js/formChecker.js" ></script>
+<script type="text/javascript" src="js/jquery.js" ></script>
+<script type="text/javascript" src="js/formChecker.js" ></script>

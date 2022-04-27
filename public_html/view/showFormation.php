@@ -1,6 +1,6 @@
 <!-- a changer -->
-<link href="view/css/admin.css" rel="stylesheet" type="text/css">
-<link href="view/css/showFormation.css" rel="stylesheet" type="text/css">
+<link href="css/admin.css" rel="stylesheet" type="text/css">
+<link href="css/showFormation.css" rel="stylesheet" type="text/css">
 
 <!-- Affiche la formations -->
 <?php $stmt=getFormation($_GET['id'])->fetch(); ?>

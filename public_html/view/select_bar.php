@@ -49,5 +49,5 @@
 </headerBar>
 
 
-<script src="view/js/slideMenu.js"></script>
+<script src="js/slideMenu.js"></script>
 

@@ -1,4 +1,4 @@
-<link href="view/css/forumLst.css" rel="stylesheet" type="text/css">
+<link href="css/forumLst.css" rel="stylesheet" type="text/css">
 
 <?php $result=dumpFollowFormation($_SESSION['id']); ?>
 <?php if($result->rowCount() > 0): ?>

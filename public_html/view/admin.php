@@ -1,4 +1,4 @@
-<link href="view/css/admin.css" rel="stylesheet" type="text/css">
+<link href="css/admin.css" rel="stylesheet" type="text/css">
 
 <table>
   <thead>
@@ -60,5 +60,5 @@
   </tbody>
 </table>
 
-<script type="text/javascript" src="view/js/jquery.js" ></script>
-<script type="text/javascript" src="view/js/formCheckerAdmin.js" ></script>
+<script type="text/javascript" src="js/jquery.js" ></script>
+<script type="text/javascript" src="js/formCheckerAdmin.js" ></script>

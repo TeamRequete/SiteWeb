@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="view/css/main.css" rel="stylesheet" type="text/css">
-    <link href="view/css/listFormations.css" rel="stylesheet" type="text/css">
-    <link href="view/css/profile.css" rel="stylesheet" type="text/css">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href="css/listFormations.css" rel="stylesheet" type="text/css">
+    <link href="css/profile.css" rel="stylesheet" type="text/css">
     <?php if(isset($_SESSION['style']) && $_SESSION['style'] === true): ?>
-      <link href="view/css/headerBar2.css" rel="stylesheet" type="text/css">
+      <link href="css/headerBar2.css" rel="stylesheet" type="text/css">
     <?php else: ?>
-      <link href="view/css/headerBar1.css" rel="stylesheet" type="text/css">
+      <link href="css/headerBar1.css" rel="stylesheet" type="text/css">
     <?php endif; ?>
     <title>Team Requête</title>
 </head>
@@ -35,7 +35,7 @@
 
 
 
-<script type="text/javascript" src="view/js/jquery.js" ></script>
-<script type="text/javascript" src="view/js/changeStyle.js" ></script>
+<script type="text/javascript" src="js/jquery.js" ></script>
+<script type="text/javascript" src="js/changeStyle.js" ></script>
 
 </html>
