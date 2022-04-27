@@ -17,8 +17,14 @@ function deconnexion(){
   die();
 }
 
-function needSession(){ //TODO ca va pas ca a retravailler
+function needSession(){
   if(isset($_SESSION['id']) === false || checkUserId($_SESSION['id']) === false){
+    deconnexion();
+  }
+}
+
+function checkSession(){
+  if (isset($_SESSION['id'])&&checkUserId($_SESSION['id']) === false) {
     deconnexion();
   }
 }
