@@ -19,7 +19,7 @@ function showFormation(){
         $fst = intval($tab[0]);
         if ($fst < $total) {
           for ($i=0; $i < count($xml->questions->question[$fst]->proposes->proposetrue); $i++) {
-            if(htmlentities($xml->questions->question[$fst]->proposes->proposetrue[$i]) === $value){
+            if(htmlentities($xml->questions->question[$fst]->proposes->proposetrue[$i]) === htmlentities($value)){
               $ret[$fst] -= 1;
             }
           }
