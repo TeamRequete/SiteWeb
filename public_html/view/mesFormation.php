@@ -70,6 +70,7 @@
         <button type="submit">Créer</button>
       </formFormation>
     </form>
+    
   </mesFormationsCreees>
 
 </mesFormations>

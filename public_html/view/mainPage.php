@@ -5,12 +5,12 @@
 <mainPage>
     <contentTopPage>
         <textImageCenter>Site de formations de la Team Requête</textImageCenter>
-        <img src="images/im.jpg" alt="imgTeamRequete"></img>
+        <img src="images/photoTeamRequete.jpg" alt="imgTeamRequete"></img>
         <contentPresentation>
             <contents>
-                <div class="content div1">A remplir avec du texte <br> balise 1</div>
-                <div class="content div2">A remplir avec du texte <br> balise 2</div>
-                <div class="content div3">A remplir avec du texte <br> balise 3</div>
+                <div class="content div1">Bienvenue sur le site de formation de la Team Requête ! Sur ce site vous trouverez toutes les formations créées par et pour des passionnés.</div>
+                <div class="content div2">La première chose à faire une fois que vous êtes connecté est de lire ou de publier une formation. Pour cela, vous pouvez soit aller sur Formations pour voir les formations déjà publiées, soit Mes Formations afin d’ajouter la votre.</div>
+                <div class="content div3">Respectez les règles de politesse et de bienveillance. Les administrateurs se réservent le droit de vous bannir du site en cas de non-respect, propos injurieux, ou publication de formation inappropriée.</div>
 
             </contents>
             <buttonsContent>

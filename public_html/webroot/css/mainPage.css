@@ -12,7 +12,7 @@ mainPage contentTopPage {
     grid-template-rows: 60px 250px;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    margin-left: 45px;
+    align-self: center;
     margin-bottom: 50px;
 }
 
@@ -45,6 +45,7 @@ mainPage contentTopPage contentPresentation contents {
 
 mainPage contentTopPage contentPresentation contents .content {
     width: 100%;
+    font-size: larger;
 }
 
 mainPage contentTopPage contentPresentation buttonsContent {

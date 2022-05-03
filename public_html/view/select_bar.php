@@ -13,14 +13,9 @@
 
   <menu>
     <a id="btn_formation" href="index.php?action=formations">Formations</a>
-    <a id="btn_moncul" href="index.php?action=mesFormation">Mes Formation</a>
+    <a id="btn_moncul" href="index.php?action=mesFormation">Mes Formations</a>
     <a id="btn_allo" href="index.php?action=forumLst">Forum</a>
   </menu>
-
-  <research>
-    <input type="text" placeholder="Rechercher sur le site" />
-    <button type="button">Rechercher</button>
-  </research>
 
   <connect>
     <!-- TODO implementer le system de sessions -->

@@ -83,15 +83,25 @@ mesFormations table tbody tr th img {
 mesFormations #createFormationForm {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 mesFormations #createFormationForm formFormation {
     display: flex;
     flex-direction: row;
+    transform: translateX(-19%);
 }
 
 mesFormations #createFormationForm formFormation label {
     margin-right: 10px;
     font-size: larger;
+}
+
+mesFormations #createFormationForm formFormation input {
+    height: 100%;
+}
+
+mesFormations #createFormationForm formFormation button {
+    height: 100%;
 }

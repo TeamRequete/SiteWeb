@@ -59,9 +59,18 @@ tableForumLst threads #btnDeleteThread:hover {
 #createForumThread formCreateThread {
     display: flex;
     flex-direction: row;
+    transform: translateX(-19%);
 }
 
 #createForumThread formCreateThread label {
     margin-right: 10px;
     font-size: larger;
+}
+
+#createForumThread formCreateThread input {
+    height: 100%;
+}
+
+#createForumThread formCreateThread button {
+    height: 100%;
 }

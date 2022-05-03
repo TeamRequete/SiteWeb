@@ -57,33 +57,6 @@ header headerBar menu a:hover {
     transition-duration: 0.5s;
 }
 
-header headerBar research {
-    margin-bottom: 45px;
-}
-
-header headerBar research input {
-    height: 30px;
-    color: black;
-    background-color: white;
-    background-image: url('../images/searchicon.png');
-    background-position: 5.5px 5.5px;
-    background-repeat: no-repeat;
-    padding-left: 40px;
-    border: 1px solid;
-    border-color: black;
-}
-
-header headerBar research input::placeholder {
-    color: black;
-}
-
-header headerBar research button {
-    height: 25px;
-    border: 1px solid;
-    border-color: black;
-    height: 34px;
-}
-
 header headerBar connect {
     display: flex;
     flex-direction: column;
