@@ -70,3 +70,6 @@ CREATE OR REPLACE TABLE forum_thread(
 );
 
 SET FOREIGN_KEY_CHECKS=1;
+
+INSERT INTO `users` VALUES
+(1,'admin','$6$rounds=5000$4fde30e40302$PYUYHq/J.QXS/uQF1DqCty94SZTSBLdwV3QsIj1uNug0jJ8yLXGPy13tOz.lXohM2ydObdfI/HYoto9ZCmrAB1','admin@example.com','Admin','2022-05-08 16:39:54');
