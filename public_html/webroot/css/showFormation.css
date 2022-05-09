@@ -4,8 +4,22 @@ h1 {
     border-radius: 10px;
 }
 
-showFormation {
+showformation {
     margin: 30px;
     background-color: grey;
     padding: 30px;
+}
+
+showformation pre {
+    background-color: blue;
+    padding: 15px;
+}
+
+showformation h1,
+showformation h2,
+showformation h3,
+showformation h4,
+showformation h5,
+showformation h6 {
+    color: rgb(143, 42, 42);
 }
