@@ -24,7 +24,7 @@ services:
       - frontend
       - backend
     ports:
-      - "80:80"
+      - "127.0.0.1:9657:80"
     volumes:
       - ${PROJECT_ROOT}/:/var/www/html/
       - ./apache/demo.virtualhost.conf:/usr/local/apache2/conf/demo.apache.conf:ro
