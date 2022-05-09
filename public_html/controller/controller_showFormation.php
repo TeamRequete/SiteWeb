@@ -20,9 +20,7 @@ function showFormation(){
         if ($fst < $total) {
           $flag = true;
           for ($i=0; $i < count($xml->questions->question[$fst]->proposes->proposetrue); $i++) {
-            print_r($ret);
             if(htmlentities($xml->questions->question[$fst]->proposes->proposetrue[$i]) === htmlentities($value)){
-              echo("<br/> ".htmlentities($xml->questions->question[$fst]->proposes->proposetrue[$i]). " === ". htmlentities($value)." <br/>");
               $ret[$fst] -= 1;
               $flag=false;
             }
