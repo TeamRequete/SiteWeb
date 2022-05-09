@@ -15,14 +15,17 @@
 <?php $ret = getFormationUserQcm($_SESSION['id'], $_GET['id']);?>
 <?php if($ret===''): ?>
 <h1>QCM</h1>
+  <section>
+    <p>Vous devez follow la formation pour avoir accés aux qcm</p>
+  </section>
 <?php else: ?>
   <h1>QCM <?php echo("Score: ".$ret); ?></h1>
+  <section>
+    <?php
+      echo(requireToVar("view/qcm.php"));
+    ?>
+  </section>
 <?php endif; ?>
-<section>
-  <?php
-    echo(requireToVar("view/qcm.php"));
-  ?>
-</section>
 
 <br/>
 <br/>
