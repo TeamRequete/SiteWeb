@@ -19,21 +19,21 @@ function insertFormation($user_id,$name) {
   <qcm>
       <questions>
           <question>
-              <problem> Comment manger une chaussette ? </problem>
+              <problem> Question 1 </problem>
               <proposes>
-                  <propose> En machant </propose>
-                  <propose> En avalant </propose>
-                  <proposetrue> En mixant </proposetrue>
-                  <propose> L'autre </propose>
+                  <propose> Choix 1 </propose>
+                  <propose> Choix 2 </propose>
+                  <proposetrue> Choix 3 </proposetrue>
+                  <propose> Choix 4 </propose>
               </proposes>
           </question>
           <question>
-              <problem> Dormir dehors pourquoi ? </problem>
+              <problem> Question 2 </problem>
               <proposes>
-                  <proposetrue> Pcq tes pauvres </proposetrue>
-                  <propose> Pcq tes cons </propose>
-                  <proposetrue> Pcq tu aimes le caca </proposetrue>
-                  <propose> Pcq c'est tous ! ftg sal pute ! </propose>
+                  <proposetrue> Choix 1 </proposetrue>
+                  <propose> Choix 2 </propose>
+                  <proposetrue> Choix 3 </proposetrue>
+                  <propose> Choix 4 </propose>
               </proposes>
           </question>
       </questions>
