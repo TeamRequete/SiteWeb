@@ -23,8 +23,8 @@ function showFormation(){
               $ret[$fst] -= 1;
             }
             if(htmlentities($xml->questions->question[$fst]->proposes->propose[$i]) === htmlentities($value)){
-		$ret[$fst] += 1;
-	   }
+              $ret[$fst] += 1;
+	          }
           }
         }
       }

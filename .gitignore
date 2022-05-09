@@ -2,6 +2,3 @@
 /public_html/webroot/uploads/*
 !/public_html/webroot/uploads/default.jpg
 /rapport.md
-/.gitignore
-/docker-compose.yml
-/php/php.ini
