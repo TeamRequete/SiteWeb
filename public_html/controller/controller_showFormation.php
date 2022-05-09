@@ -18,17 +18,24 @@ function showFormation(){
         $tab = explode("|", $key);
         $fst = intval($tab[0]);
         if ($fst < $total) {
+          $flag = true;
           for ($i=0; $i < count($xml->questions->question[$fst]->proposes->proposetrue); $i++) {
+            print_r($ret);
             if(htmlentities($xml->questions->question[$fst]->proposes->proposetrue[$i]) === htmlentities($value)){
+              echo("<br/> ".htmlentities($xml->questions->question[$fst]->proposes->proposetrue[$i]). " === ". htmlentities($value)." <br/>");
               $ret[$fst] -= 1;
+              $flag=false;
             }
+          }
+          if($flag === true){
+            $ret[$fst] = -1;
           }
         }
       }
     }
     $nbReponse = 0;
     for ($i=0; $i < $total; $i++) {
-      if($ret[$i] <= 0){
+      if($ret[$i] === 0){
         $nbReponse+=1;
       }
     }
