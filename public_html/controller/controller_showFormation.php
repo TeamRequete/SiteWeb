@@ -22,16 +22,13 @@ function showFormation(){
             if(htmlentities($xml->questions->question[$fst]->proposes->proposetrue[$i]) === htmlentities($value)){
               $ret[$fst] -= 1;
             }
-            if(htmlentities($xml->questions->question[$fst]->proposes->propose[$i]) === htmlentities($value)){
-              $ret[$fst] += 1;
-	          }
           }
         }
       }
     }
     $nbReponse = 0;
     for ($i=0; $i < $total; $i++) {
-      if($ret[$i] === 0){
+      if($ret[$i] <= 0){
         $nbReponse+=1;
       }
     }
